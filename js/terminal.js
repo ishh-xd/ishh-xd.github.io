@@ -9,33 +9,15 @@ class Terminal {
                     personal: {
                         'about.txt': [
                             'txt',
-                            `I'm Natasquare. I like learning new things and making cool stuff.
-I'm a programmer, but I procrastinate a lot. Besides, I'm also a progammer and a huge music fan.`,
+                            `Ishh is a developer. 🐨`,
                         ],
                         'links.md': [
                             'md',
-                            `[Github](//github.com/Natasquare/)
-[Discord](//discord.com/users/696698254770831421)
-[Wakatime](//wakatime.com/@ntsq)
-[Last.fm](//www.last.fm/user/natasquare)
-[Rickroll](//www.youtube.com/watch?v=dQw4w9WgXcQ)`,
+                            ``,
                         ],
                         'skills.md': [
                             'md',
-                            `+------------+-------------+
-|   **[#78aad8:Skills]**   |  **[#78aad8:Rating/10]**  |
-+------------+-------------+
-| JavaScript | NaN         |
-| HTML       | 6u!joq      |
-| CSS        |         7   |
-|            | ++++++++++  |
-| Brainfuck  | [->+++++<]  |
-|            | >+++.       |
-| Typescript | TS1112      |
-| What am I  | doing with  |
-| my life    | right now   |
-| Lua        | nvim config |
-+------------+-------------+`,
+                            ``,
                         ],
                     },
                     'AMOGUS.txt': [

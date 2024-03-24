@@ -71,7 +71,7 @@ commands.wttr = async(term, args) => {
     return true;
 };
 
-commands.fetch = async(term, args) => {
+/* commands.fetch = async(term, args) => {
     const d = {
         discord: async() => {
             const API = 'https://api.lanyard.rest/v1/users/696698254770831421',
@@ -208,10 +208,8 @@ ${d.recent
                 );
             }
             return true;
-        },
-        /**
-         * @request 637648484979441706
-         */
+        }, 
+        
         girls: async() =>
             new Promise((r) =>
                 setTimeout(
@@ -220,9 +218,7 @@ ${d.recent
                 )
             ),
         git: async() => {
-            /**
-             * @link https://github.com/shinnn/github-username-regex
-             */
+            
             let target = 'natasquare',
                 type = 'users';
             if (args[1]) target = args[1];
@@ -267,7 +263,7 @@ ${d.recent
     }
     return await d[args[0]]();
 };
-
+*/
 /**
  * @link https://stackoverflow.com/a/5918791/18412379
  */

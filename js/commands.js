@@ -9,7 +9,7 @@ commands.help = async(term) => {
 commands.echo = async(term, args) => (term.log(args.join(" ") || ''), true);
 commands.clear = async(term) => term.clear();
 commands.date = async(term) => (term.log(new Date().toLocaleString()), true);
-commands.cat = async(term, args) => {
+commands.readFile = async(term, args) => {
     if (!args[0]) return true;
     const read = term.d.fs.read(args[0], term.d.dir);
     if (!read) return term.log('cat: no such file or directory: ' + args[0]);
@@ -79,7 +79,7 @@ commands.uwu = async(term, args) => {
 
 const sus = new Audio('assets/amogus.mp3');
 commands.sus = async(term) => {
-    commands.cat(term, ['/AMOGUS.txt']);
+    commands.readFile(term, ['/AMOGUS.txt']);
     await sus.play();
 };
 

@@ -9,6 +9,15 @@ commands.help = async(term) => {
 commands.echo = async(term, args) => (term.log(args.join(" ") || ''), true);
 commands.clear = async(term) => term.clear();
 commands.date = async(term) => (term.log(new Date().toLocaleString()), true);
+commands.cd = async(term, args) => {
+    if (!args[0]) return true;
+    const read = term.d.fs.read(args[0], term.d.dir);
+    if (!read) return term.log('cd: no such file or directory: ' + args[0]);
+    if (read[0]) return term.log('cd: not a directory');
+    if (args[0] === '/') term.d.dir = '/';
+    else term.d.dir = term.d.fs.parseRelativePath(args[0] + '/', term.d.dir);
+    return true;
+};
 commands.readFile = async(term, args) => {
     if (!args[0]) return true;
     const read = term.d.fs.read(args[0], term.d.dir);
@@ -17,28 +26,7 @@ commands.readFile = async(term, args) => {
     term.log(read[1]);
     return true;
 };   
-    
-/**
- * @link https://stackoverflow.com/a/5918791/18412379
- */
-function getBrowser() {
-    const ua = navigator.userAgent;
-    let tem,
-        M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-    if (/trident/i.test(M[1])) {
-        tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
-        return 'IE ' + (tem[1] || '');
-    }
-    if (M[1] === 'Chrome') {
-        tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
-        if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
-    }
-    M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
-    if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
-    return M.join(' ');
-}
-
-commands.history = async(term, args) => {
+    commands.history = async(term, args) => {
     /* global TERM_HISTORY */
     term.log(
         TERM_HISTORY.map(
@@ -49,8 +37,6 @@ commands.history = async(term, args) => {
     );
     return true;
 };
-
-
 commands.uwu = async(term, args) => {
     if (!args[0]) term.log('uwu');
     else {
@@ -76,15 +62,11 @@ commands.uwu = async(term, args) => {
     }
     return true;
 };
-
 const sus = new Audio('assets/amogus.mp3');
 commands.sus = async(term) => {
     commands.readFile(term, ['/AMOGUS.txt']);
     await sus.play();
 };
-
-
-
 commands.tts = async(term, args) => {
     if (!args[0]) return term.log('tts: Nothing to speak.');
   const audio = new Audio(
@@ -95,3 +77,24 @@ commands.tts = async(term, args) => {
     await audio.play();
     return true;
 };
+/**
+ * @link https://stackoverflow.com/a/5918791/18412379
+ */
+function getBrowser() {
+    const ua = navigator.userAgent;
+    let tem,
+        M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    if (/trident/i.test(M[1])) {
+        tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+        return 'IE ' + (tem[1] || '');
+    }
+    if (M[1] === 'Chrome') {
+        tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+        if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+    }
+    M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+    if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+    return M.join(' ');
+}
+
+        

@@ -18,6 +18,43 @@ commands.cd = async(term, args) => {
     else term.d.dir = term.d.fs.parseRelativePath(args[0] + '/', term.d.dir);
     return true;
 };
+commands.ls = async(term, args) => {
+    let target = args[0];
+    target ??= '.';
+    const read = term.d.fs.read(target, term.d.dir);
+    if (!read) return term.log('ls: no such file or directory: ' + target);
+    if (read[0]) return term.log('ls: not a directory');
+    const typeIcons = {
+        txt: '',
+        'txt/md': '',
+        UNKNOWN: '',
+    };
+    term.log(
+        Object.entries(read)
+            .map(
+                (f) =>
+                    `${
+                        (Array.isArray(f[1]) ? typeIcons[f[1][0] || 'UNKNOWN'] : '') ||
+                        typeIcons.UNKNOWN
+                    }  ${f[0]}`
+            )
+            .sort((a, b) =>
+                a.startsWith('') && b.startsWith('') ? 0 : a.startsWith('') ? -1 : 1
+            )
+            .map((x) => (x.startsWith('') ? `**[#78aad8:${x}]**` : x))
+            .join('\n')
+    );
+    return true;
+};
+
+commands.cat = async(term, args) => {
+    if (!args[0]) return true;
+    const read = term.d.fs.read(args[0], term.d.dir);
+    if (!read) return term.log('cat: no such file or directory: ' + args[0]);
+    if (!read[0]) return term.log('cat: is a directory');
+    term.log(read[1]);
+    return true;
+};   
 commands.readFile = async(term, args) => {
     if (!args[0]) return true;
     const read = term.d.fs.read(args[0], term.d.dir);
@@ -26,6 +63,8 @@ commands.readFile = async(term, args) => {
     term.log(read[1]);
     return true;
 };   
+
+
     commands.history = async(term, args) => {
     /* global TERM_HISTORY */
     term.log(

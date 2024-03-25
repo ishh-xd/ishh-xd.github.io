@@ -5,71 +5,13 @@ const CACHE = {};
 
 commands.echo = async(term, args) => (term.log(args[0] || ''), true);
 commands.clear = async(term) => term.clear();
-
-commands.cd = async(term, args) => {
-    if (!args[0]) return true;
-    const read = term.d.fs.read(args[0], term.d.dir);
-    if (!read) return term.log('cd: no such file or directory: ' + args[0]);
-    if (read[0]) return term.log('cd: not a directory');
-    if (args[0] === '/') term.d.dir = '/';
-    else term.d.dir = term.d.fs.parseRelativePath(args[0] + '/', term.d.dir);
-    return true;
-};
-
-commands.ls = async(term, args) => {
-    let target = args[0];
-    target ??= '.';
-    const read = term.d.fs.read(target, term.d.dir);
-    if (!read) return term.log('ls: no such file or directory: ' + target);
-    if (read[0]) return term.log('ls: not a directory');
-    const typeIcons = {
-        txt: '',
-        'txt/md': '',
-        UNKNOWN: '',
-    };
-    term.log(
-        Object.entries(read)
-            .map(
-                (f) =>
-                    `${
-                        (Array.isArray(f[1]) ? typeIcons[f[1][0] || 'UNKNOWN'] : '') ||
-                        typeIcons.UNKNOWN
-                    }  ${f[0]}`
-            )
-            .sort((a, b) =>
-                a.startsWith('') && b.startsWith('') ? 0 : a.startsWith('') ? -1 : 1
-            )
-            .map((x) => (x.startsWith('') ? `**[#78aad8:${x}]**` : x))
-            .join('\n')
-    );
-    return true;
-};
-
-commands.cat = async(term, args) => {
-    if (!args[0]) return true;
-    const read = term.d.fs.read(args[0], term.d.dir);
-    if (!read) return term.log('cat: no such file or directory: ' + args[0]);
-    if (!read[0]) return term.log('cat: is a directory');
-    term.log(read[1]);
-    return true;
-};
-
-commands.commands = async(term) => {
+commands.help = async(term) => {
     term.log(Object.keys(commands).sort().join(', '));
     return true;
 };
-
 commands.date = async(term) => (term.log(new Date().toLocaleString()), true);
-
 commands.pwd = async(term) => (term.log(term.d.dir), true);
 
-commands.wttr = async(term, args) => {
-    const API = `https://wttr.in/${args[0] || ''}?0AFT`,
-        res = await fetch(API),
-        txt = await res.text();
-    term.log(txt);
-    return true;
-};
 
 /* commands.fetch = async(term, args) => {
     const d = {
@@ -395,37 +337,13 @@ commands.sus = async(term) => {
     await sus.play();
 };
 
-commands.touch = async(term, args) => {
-    if (args[0]) term.d.fs.create(args[0], term.d.dir, [args[0].split('.').at(-1), '']);
-    return true;
-};
 
-commands.mkdir = async(term, args) => {
-    if (args[0]) term.d.fs.create(args[0], term.d.dir, {});
-    return true;
-};
-
-commands.rm = async(term, args) => {
-    if (!args[0]) return term.log('rm: no file specified');
-    term.d.fs.remove(args[0], term.d.dir);
-    return true;
-};
-
-commands.write = async(term, args) => {
-    if (!args[0]) return term.log('write: no file specified');
-    const read = term.d.fs.read(args[0], term.d.dir);
-    if (!read[0]) return term.log('write: is a directory');
-    if (!args[1]) return term.log('write: no content specified');
-    term.d.fs.remove(args[0], term.d.dir);
-    term.d.fs.create(args[0], term.d.dir, [read[0], args[1]]);
-    return true;
-};
 
 commands.tts = async(term, args) => {
     if (!args[0]) return term.log('tts: nothing to speak');
     const audio = new Audio(
         `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(
-            args[0]
+            args.join(" ")
         )}&tl=en&client=tw-ob&ttsspeed=1`
     );
     await audio.play();

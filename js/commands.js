@@ -2,15 +2,21 @@
 commands = {};
 
 const CACHE = {};
-
-commands.echo = async(term, args) => (term.log(args[0] || ''), true);
-commands.clear = async(term) => term.clear();
 commands.help = async(term) => {
     term.log(Object.keys(commands).sort().join(', '));
     return true;
 };
+commands.echo = async(term, args) => (term.log(args[0] || ''), true);
+commands.clear = async(term) => term.clear();
 commands.date = async(term) => (term.log(new Date().toLocaleString()), true);
-        
+commands.cat = async(term, args) => {
+    if (!args[0]) return true;
+    const read = term.d.fs.read(args[0], term.d.dir);
+    if (!read) return term.log('cat: no such file or directory: ' + args[0]);
+    if (!read[0]) return term.log('cat: is a directory');
+    term.log(read[1]);
+    return true;
+};   
     
 /**
  * @link https://stackoverflow.com/a/5918791/18412379
@@ -80,8 +86,8 @@ commands.sus = async(term) => {
 
 
 commands.tts = async(term, args) => {
-    if (!args[0]) return term.log('tts: nothing to speak');
-    const audio = new Audio(
+    if (!args[0]) return term.log('tts: Nothing to speak.');
+  const audio = new Audio(
         `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(
             args.join(" ")
         )}&tl=en&client=tw-ob&ttsspeed=1`

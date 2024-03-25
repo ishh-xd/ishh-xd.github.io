@@ -6,7 +6,7 @@ commands.help = async(term) => {
     term.log(Object.keys(commands).sort().join(', '));
     return true;
 };
-commands.echo = async(term, args) => (term.log(args[0] || ''), true);
+commands.echo = async(term, args) => (term.log(args.join(" ") || ''), true);
 commands.clear = async(term) => term.clear();
 commands.date = async(term) => (term.log(new Date().toLocaleString()), true);
 commands.cat = async(term, args) => {
@@ -56,7 +56,7 @@ commands.uwu = async(term, args) => {
     else {
         const faces = ['OwO', 'UwU', '>w<', 'uWu', ':3', 'ÙwÚ', 'QwQ', 'uwu', 'owo'];
         term.log(
-            args[0]
+            args.join(" ")
                 .toLowerCase()
                 .replace(/[lr]/g, 'w')
                 .replace(/[LR]/g, 'W')

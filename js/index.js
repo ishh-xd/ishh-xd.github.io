@@ -11,14 +11,14 @@ let wcounter = 0;
 /* global terminal, Terminal, commands */
 terminal = new Terminal({commands});
 
-const eawh = createDragElement('ntsq@portfolio: /', terminal.term);
+const eawh = createDragElement('ishh@portfolio: /', terminal.term);
 terminal.win = eawh;
 document.body.append(eawh.e);
 
 $.q('#runt').onclick = () => {
     terminal = new Terminal({commands});
 
-    const termel = createDragElement('ntsq@portfolio: /', terminal.term);
+    const termel = createDragElement('ishh@portfolio: /', terminal.term);
     terminal.win = termel;
     document.body.append(termel.e);
 };

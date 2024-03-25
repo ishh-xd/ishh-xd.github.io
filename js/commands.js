@@ -63,6 +63,7 @@ commands.readFile = async(term, args) => {
     term.log(read[1]);
     return true;
 };   
+commands.pwd = async(term) => (term.log(term.d.dir), true);
 
 
     commands.history = async(term, args) => {

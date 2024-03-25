@@ -194,7 +194,7 @@ class Terminal {
             res = await cmd(this, d.slice(1));
             if (!args.data[i + 1] || (m === '&' && !res)) break;
         }
-        this.win.setName(`ntsq@portfolio: ${this.d.dir}`);
+        this.win.setName(`ishh@portfolio: ${this.d.dir}`);
         return res;
     }
 

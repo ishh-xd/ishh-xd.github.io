@@ -1,3 +1,5 @@
+
+/* default "#A0153E" = #78aad8 */
 :root {
     --dark: #101215;
     --dark2: #1a1a1d;
@@ -6,7 +8,7 @@
     --hl: #eeeeee99;
     --hl2: #eeeeee66;
     --hl3: #eeeeee03;
-    --accent: #78aad8;
+    --accent: #A0153e; /* edited */
     --red: #bf616a;
     --red-hl: #bf616a07;
     --red-hl2: #bf616a10;

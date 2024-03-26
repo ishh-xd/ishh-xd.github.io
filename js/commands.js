@@ -64,7 +64,7 @@ commands.readFile = async(term, args) => {
     return true;
 };   
 commands.pwd = async(term) => (term.log(term.d.dir), true);
-commands.browser = async(term) =>  {
+commands.browser = async(term) =>  (
     term.log(`[#78aad8:󰓹]  ${getBrowser()}
 [#232527:────── ──  ─]
 [#78aad8:󰔃]  Screen
@@ -76,7 +76,7 @@ commands.browser = async(term) =>  {
                 .match(/\(.+\)|.+? +?/g)
                 .map((x) => x.trim())
                 .join('\n|  |  ')}
-|  [#78aad8:]  ${navigator.language}`), true};
+|  [#78aad8:]  ${navigator.language}`), true);
 
 
     commands.history = async(term, args) => {

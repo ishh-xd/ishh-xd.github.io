@@ -122,6 +122,7 @@ commands.tts = async(term, args) => {
             args.join(" ")
         )}&tl=en&client=tw-ob&ttsspeed=1`
     );
+    term.log(`Speaking:  ${args.join(" ")}`)
     await audio.play();
     return true;
 };

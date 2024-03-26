@@ -64,6 +64,19 @@ commands.readFile = async(term, args) => {
     return true;
 };   
 commands.pwd = async(term) => (term.log(term.d.dir), true);
+commands.browser = async(term) =>  {
+    term.log(`[#78aad8:󰓹]  ${getBrowser()}
+[#232527:────── ──  ─]
+[#78aad8:󰔃]  Screen
+|  [#78aad8:󰆾]  ${screen.width}x${screen.height}
+|  [#78aad8:󰉼]  ${screen.colorDepth} bits
+[#78aad8:󰞂]  Navigator
+|  [#78aad8:󰆘]  Cookies: ${navigator.cookieEnabled ? 'Enabled' : 'Disabled'}
+|  [#78aad8:󰀉]  ${navigator.userAgent
+                .match(/\(.+\)|.+? +?/g)
+                .map((x) => x.trim())
+                .join('\n|  |  ')}
+|  [#78aad8:]  ${navigator.language}`), true};
 
 
     commands.history = async(term, args) => {

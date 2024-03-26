@@ -107,6 +107,14 @@ commands.sus = async(term) => {
     commands.readFile(term, ['/AMOGUS.txt']);
     await sus.play();
 };
+
+const rickR = new Audio('assets/rickroll.mp3');
+commands.boom = async(term) => {
+    term.log("Cry for it.")
+    await rickR.play();
+};
+
+
 commands.tts = async(term, args) => {
     if (!args[0]) return term.log('tts: Nothing to speak.');
   const audio = new Audio(

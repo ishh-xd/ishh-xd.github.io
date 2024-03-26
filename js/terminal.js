@@ -17,7 +17,7 @@ class Terminal {
                         ],
                         'skills.md': [
                             'md',
-                            `<p align="center"> <img src="https://readme-typing-svg.herokuapp.com/?lines=Skills&center=true&width=380&height=45"> </p>
+                            `![Skills](https://readme-typing-svg.herokuapp.com/?lines=Skills&center=true&width=380&height=45)
 # 💻 Tech Stack:
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white)
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-%234285F4.svg?style=flat&logo=google-cloud&logoColor=white) ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=flat&logo=azure-devops&logoColor=white) ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat&logo=Cloudflare&logoColor=white)

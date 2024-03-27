@@ -20,7 +20,7 @@ commands.cd = async(term, args) => {
     return true;
 };
 commands.ls = async(term, args) => {
-    let target = args[0];
+    let target = args.join(" ");
     target ??= '.';
     const read = term.d.fs.read(target, term.d.dir);
     if (!read) return term.log('ls: no such file or directory: ' + target);
@@ -49,7 +49,7 @@ commands.ls = async(term, args) => {
 };
 
 commands.cat = async(term, args) => {
-    if (!args[0]) return true;
+    if (!args.join(" ")) return true;
     const read = term.d.fs.read(args[0], term.d.dir);
     if (!read) return term.log('cat: no such file or directory: ' + args[0]);
     if (!read[0]) return term.log('cat: is a directory');
@@ -57,7 +57,7 @@ commands.cat = async(term, args) => {
     return true;
 };   
 commands.readFile = async(term, args) => {
-    if (!args[0]) return true;
+    if (!args.join(" ")) return true;
     const read = term.d.fs.read(args[0], term.d.dir);
     if (!read) return term.log('cat: no such file or directory: ' + args[0]);
     if (!read[0]) return term.log('cat: is a directory');
@@ -92,7 +92,7 @@ commands.browser = async(term) =>  (
     return true;
 };
 commands.uwu = async(term, args) => {
-    if (!args[0]) term.log('uwu');
+    if (!args.join(" ")) term.log('uwu');
     else {
         const faces = ['OwO', 'UwU', '>w<', 'uWu', ':3', 'ÙwÚ', 'QwQ', 'uwu', 'owo'];
         term.log(
@@ -130,7 +130,7 @@ commands.boom = async(term) => {
 
 
 commands.tts = async(term, args) => {
-    if (!args[0]) return term.log('tts: Nothing to speak.');
+    if (!args.join(" ")) return term.log('tts: Nothing to speak.');
   const audio = new Audio(
         `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(
             args.join(" ")

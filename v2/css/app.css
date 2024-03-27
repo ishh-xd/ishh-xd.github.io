@@ -45,7 +45,7 @@
 /* nerd */
 @font-face {
     font-family: 'JetBrains Mono NF';
-    src: url('/assets/JetBrainsMonoNerdFont.ttf') format('truetype');
+    src: url('/v2/assets/JetBrainsMonoNerdFont.ttf') format('truetype');
 }
 
 /* sarasa mono for multi lang support */
@@ -62,7 +62,7 @@ body {
 }
 
 .bg {
-    background: url('/assets/wallpaper.png') no-repeat center top;
+    background: url('/v2/assets/wallpaper.png') no-repeat center top;
     min-width: 100vw;
     min-height: 100vh;
     mix-blend-mode: multiply;

@@ -7,7 +7,6 @@ commands.help = async(term) => {
     term.log(Object.keys(commands).sort().join(', '));
     return true;
 };
-commands.exit = async(term)=> () => (location.href = '');
 commands.echo = async(term, args) => (term.log(args.join(" ") || ''), true);
 commands.clear = async(term) => term.clear();
 commands.date = async(term) => (term.log(new Date().toLocaleString()), true);

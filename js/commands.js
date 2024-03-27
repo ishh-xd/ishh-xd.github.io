@@ -1,3 +1,4 @@
+
 /* global commands */
 commands = {};
 
@@ -64,9 +65,6 @@ commands.readFile = async(term, args) => {
     return true;
 };   
 commands.pwd = async(term) => (term.log(term.d.dir), true);
-
-
-
 commands.browser = async(term) =>  (
     term.log(`[#78aad8:󰓹]  ${getBrowser()}
 [#232527:────── ──  ─]
@@ -213,4 +211,5 @@ function getBrowser() {
     if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
     return M.join(' ');
 }
+
         

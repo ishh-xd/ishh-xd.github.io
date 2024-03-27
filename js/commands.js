@@ -162,7 +162,7 @@ ${
 } (${
     ['web', 'mobile', 'desktop']
         .filter((x) => data[`active_on_discord_${x}`])
-        .join(' - ') || 'probably sleeping'
+        .join(' - ') || 'Probably sleeping?'
 })
 [#78aad8:󰐌]  Activit${data.activities.length > 1 ? 'ies' : 'y'}
 ${

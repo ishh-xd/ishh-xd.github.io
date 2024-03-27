@@ -1,3 +1,3 @@
 # Termofolio 
 - Designed by Natasquare.
-   - Edited by Ishh.
+   - Modified by Ishh.

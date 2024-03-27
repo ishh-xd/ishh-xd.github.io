@@ -1,5 +1,6 @@
 /* global commands */
 commands = {};
+const userIdMain = "1041881720380727377";
 
 const CACHE = {};
 commands.help = async(term) => {
@@ -139,6 +140,57 @@ commands.tts = async(term, args) => {
     await audio.play();
     return true;
 };
+
+commands.discord = async() => {
+            const API = `https://api.lanyard.rest/v1/users/${userIdMain}`,
+                res = await fetch(API),
+                {data} = await res.json();
+            if (!data?.discord_user?.username) return term.log('discord: Could not fetch info.');
+            console.log(data.discord_status);
+            term.log(`[#78aad8:󰓹]  **${data.discord_user.username}**#${
+                data.discord_user.discriminator
+            }
+[#232527:────── ──  ─]
+[#78aad8:󰀉]  \`${data.discord_user.id}\`
+${
+    {
+        online: '[#8ebc67:󰝥]  Online',
+        idle: '[#ebcb8b:󰽧]  Idle',
+        dnd: '[#bf616a:󰍶]  DND',
+        offline: '[#eeeeee66:󰻃]  Dead', // this is hl2 btw
+    }[data.discord_status]
+} (${
+    ['web', 'mobile', 'desktop']
+        .filter((x) => data[`active_on_discord_${x}`])
+        .join(' - ') || 'probably sleeping'
+})
+[#78aad8:󰐌]  Activit${data.activities.length > 1 ? 'ies' : 'y'}
+${
+    data.activities
+        .map(
+            (x) =>
+                `|  ${
+                    [
+                        '[#78aad8:󰊗]  Playing',
+                        '[#78aad8:󰑋]  Streaming',
+                        '[#78aad8:󰝚]  Listening to',
+                        '[#78aad8:󰑈]  Watching',
+                        '[#78aad8:󰦨] ',
+                        '[#78aad8:󱐋]  Competing in',
+                    ][x.type]
+                } **${x.name}**${[x.details, x.state]
+                    .filter(Boolean)
+                    .map((y) => `\n|  |  ${y}`)
+                    .join('')}`
+        )
+        .join('\n') || '| Procrastinating'
+}
+`);
+            return true;
+        },
+
+
+
 /**
  * @link https://stackoverflow.com/a/5918791/18412379
  */

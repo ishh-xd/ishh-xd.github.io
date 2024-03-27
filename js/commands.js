@@ -140,9 +140,9 @@ commands.tts = async(term, args) => {
     return true;
 };
 
-commands.discord = async() => {
-    
-    const API = `https://api.lanyard.rest/v1/users/1041881720380727377`,
+commands.discord = async(term, args) => {
+ const useridD = `1041881720380727377`;
+    const API = `https://api.lanyard.rest/v1/users/${useridD}`,
                 res = await fetch(API),
                 {data} = await res.json();
             if (!data?.discord_user?.username) return term.log('discord: Could not fetch info.');

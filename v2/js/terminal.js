@@ -9,7 +9,8 @@ class Terminal {
                     personal: {
                         'about.txt': [
                             'txt',
-                            `Ishh is a developer. 🐨`,
+                            `I'm Ishh, a undefined-year-old developer from India (dare being racist). I've been coding since almost 3 years (currently it's 2024).
+I am proficient in Node.js and MongoDB, I'm learning other coding languages too. But to be honest I'm best at javascript.`,
                         ],
                         'links.md': [
                             'md',

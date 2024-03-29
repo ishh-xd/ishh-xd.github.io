@@ -16,6 +16,7 @@ class Terminal {
                             `![Links](https://readme-typing-svg.herokuapp.com/?lines=Links&center=true&width=360&height=45)
 # 🔗 Links:
 [Discord](//discord.com/users/1041881720380727377)
+[Pinterest](//pin.it/7I3Rqoddk)
 [Spotify](//open.spotify.com/user/31zdyd6rh3oaekcdazam4gmu343q?si=AhgPOlg4QwOF8w7krYEuEg)
 [Mail](mailto:ishh-xd@proton.me)
 `,

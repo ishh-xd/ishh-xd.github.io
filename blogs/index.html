@@ -1,102 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colorful Rainbow Blog</title>
+  <title>Under Maintenance</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom right, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff);
-      color: #fff;
+      background-color: #f0f0f0;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
-    header {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px;
+    .container {
       text-align: center;
     }
 
-    nav ul {
-      list-style-type: none;
-      padding: 0;
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
     }
 
-    nav ul li {
-      display: inline;
-      margin-right: 20px;
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
     }
 
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease;
+    .illustration {
+      width: 80%;
+      max-width: 400px;
+      margin-bottom: 30px;
     }
 
-    nav ul li a:hover {
-      color: #ffcc00;
-    }
+    @media only screen and (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
 
-    main {
-      padding: 20px;
-    }
-
-    article {
-      margin-bottom: 40px;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 5px;
-      padding: 20px;
-      transition: box-shadow 0.3s ease;
-    }
-
-    article:hover {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    h1, h2 {
-      color: #fff;
-    }
-
-    footer {
-      background-color: rgba(0, 0, 0, 0.5);
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    footer p {
-      margin: 0;
+      p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Colorful Rainbow Blog</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <article>
-      <h2>Blog Post Title</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod eu urna sed dignissim. Phasellus tincidunt, lectus et fermentum consequat, felis lorem semper mauris, id luctus nunc sapien non nunc.</p>
-      <a href="#">Read more</a>
-    </article>
-
-    <!-- More articles can be added here -->
-  </main>
-
-  <footer>
-    <p>&copy; 2024 Colorful Rainbow Blog</p>
-  </footer>
+  <div class="container">
+    <img src="maintenance.png" alt="Under Maintenance" class="illustration">
+    <h1>Sorry, we're under maintenance!</h1>
+    <p>We're working hard to improve our website. Please check back later.</p>
+  </div>
 
 </body>
 </html>

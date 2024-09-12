@@ -1,20 +1,32 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Mode Blog</title>
+    <title>My Dark Mode Blog</title>
     <style>
-        /* Basic reset */
-        * {
+        /* Default Dark Mode */
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-y: scroll;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
-        /* Scrollbar Styling */
+        .light-mode {
+            background-color: #f4f4f4;
+            color: #333333;
+        }
+
+        .dark-mode {
+            background-color: #0d0d0d;
+            color: #ffffff;
+        }
+
+        /* Scrollbar Styling for Desktop */
         html {
             overflow-y: scroll;
         }
@@ -32,33 +44,9 @@
             background-color: #1a1a1a;
         }
 
-        /* Default (Dark Mode) */
+        /* For Mobile */
         body {
-            background-color: #0d0d0d;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            overflow-y: scroll;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Header */
-        header {
-            background: #1a1a1a;
-            padding: 1.5rem 0;
-            border-bottom: 2px solid #333;
-            text-align: center;
-        }
-
-        header h1 {
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-            font-size: 2.5rem;
+            -webkit-overflow-scrolling: touch;
         }
 
         /* Navigation */
@@ -87,202 +75,150 @@
             border-bottom: 2px solid #6bcf4b;
         }
 
-        /* Main content */
-        main {
-            padding: 2rem 0;
-            text-align: center;
+        nav ul li a.active {
+            color: #6bcf4b;
+            border-bottom: 2px solid #6bcf4b;
         }
 
-        article {
-            background: #1f1f1f;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Light Mode Specific Styles */
+        .light-mode header {
+            background-color: #ffffff;
+            border-bottom: 2px solid #ddd;
         }
 
-        article h2 {
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-            font-size: 1.8rem;
+        .light-mode nav ul li a {
+            color: #333333;
         }
 
-        article p {
-            color: #b0b0b0;
+        .light-mode nav ul li a:hover {
+            color: #6bcf4b;
+            border-bottom: 2px solid #6bcf4b;
         }
 
-        /* Button */
-        .cta-button {
-            display: inline-block;
+        .light-mode article {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .light-mode footer {
+            background-color: #ffffff;
+            border-top: 2px solid #ddd;
+        }
+
+        .light-mode .cta-button {
+            background-color: #6bcf4b;
+            color: #333333;
+        }
+
+        .dark-mode .cta-button {
             background-color: #6bcf4b;
             color: #0d0d0d;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
+        }
+
+        /* Toggle Button */
+        #theme-toggle {
+            background-color: #6bcf4b;
+            color: #0d0d0d;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
             font-weight: bold;
+            border-radius: 5px;
             margin-top: 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        #theme-toggle:hover {
+            background-color: #0d0d0d;
+            color: #6bcf4b;
             border: 2px solid #6bcf4b;
         }
 
-        .cta-button:hover {
-            background-color: #0d0d0d;
+        /* Blog Post Styling */
+        article {
+            background-color: #1a1a1a;
+            margin: 2rem auto;
+            padding: 2rem;
+            max-width: 600px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
             color: #6bcf4b;
         }
 
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            padding: 1.5rem 0;
-            border-top: 2px solid #333;
-            text-align: center;
-        }
-
-        footer p {
-            color: #ffffff;
-        }
-
-        /* Light Mode Styling */
-        @media (prefers-color-scheme: light) {
-            body {
-                background-color: #f4f4f4;
-                color: #333333;
-            }
-
-            header {
-                background: #ffffff;
-                border-bottom: 2px solid #ddd;
-            }
-
-            header h1 {
-                color: #333333;
-            }
-
-            nav ul li a {
-                color: #333333;
-            }
-
-            nav ul li a:hover {
-                color: #6bcf4b;
-                border-bottom: 2px solid #6bcf4b;
-            }
-
-            article {
-                background: #ffffff;
-                color: #333333;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            article h2 {
-                color: #333333;
-            }
-
-            article p {
-                color: #555555;
-            }
-
-            footer {
-                background: #ffffff;
-                border-top: 2px solid #ddd;
-            }
-
-            footer p {
-                color: #333333;
-            }
-
-            /* Light mode scrollbar */
-            ::-webkit-scrollbar-thumb {
-                background-color: #6bcf4b;
-            }
-
-            ::-webkit-scrollbar-track {
-                background-color: #f4f4f4;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul li a {
-                font-size: 1rem;
-            }
-
-            article {
-                padding: 1rem;
-            }
-
-            .cta-button {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-
-            nav ul li a {
-                font-size: 0.9rem;
-            }
-
-            article {
-                padding: 0.75rem;
-            }
-
-            .cta-button {
-                padding: 0.5rem;
-                font-size: 0.8rem;
-            }
+        .cta-button {
+            display: inline-block;
+            margin-top: 1rem;
+            background-color: #6bcf4b;
+            color: #0d0d0d;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
         }
     </style>
 </head>
-<body>
+<body class="dark-mode">
     <header>
         <div class="container">
             <h1>My Dark Mode Blog</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="active">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
+            <button id="theme-toggle">Switch to Light Mode</button>
         </div>
     </header>
 
     <main>
-        <div class="container">
-            <article>
-                <h2>Blog Post Title</h2>
-                <p>This is a sample blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae accumsan lacus.</p>
-                <a href="#" class="cta-button">Read More</a>
-            </article>
+        <article>
+            <h2>Blog Post Title</h2>
+            <p>This is a sample blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae accumsan lacus.</p>
+            <a href="#" class="cta-button">Read More</a>
+        </article>
 
-            <article>
-                <h2>Another Post Title</h2>
-                <p>This is another sample blog post. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc ut erat id mauris.</p>
-                <a href="#" class="cta-button">Read More</a>
-            </article>
-        </div>
+        <article>
+            <h2>Another Post Title</h2>
+            <p>This is another sample blog post. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc ut erat id mauris.</p>
+            <a href="#" class="cta-button">Read More</a>
+        </article>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 My Dark Mode Blog. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 My Dark Mode Blog</p>
     </footer>
+
+    <script>
+        // Get the toggle button and the body
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Check localStorage for the preferred theme and apply it
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            body.classList.add(currentTheme);
+            if (currentTheme === 'light-mode') {
+                toggleButton.textContent = 'Switch to Dark Mode';
+            }
+        }
+
+        // Toggle between light and dark mode
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.replace('dark-mode', 'light-mode');
+                toggleButton.textContent = 'Switch to Dark Mode';
+                localStorage.setItem('theme', 'light-mode');
+            } else {
+                body.classList.replace('light-mode', 'dark-mode');
+                toggleButton.textContent = 'Switch to Light Mode';
+                localStorage.setItem('theme', 'dark-mode');
+            }
+        });
+    </script>
 </body>
 </html>

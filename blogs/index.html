@@ -14,8 +14,8 @@
 
         /* General styling */
         body {
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: #0d0d0d; /* Dark background */
+            color: #e0e0e0; /* Light text */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
         }
@@ -28,36 +28,35 @@
 
         /* Header styling */
         header {
-            background: linear-gradient(90deg, #1f1f1f, #333);
+            background: #1a1a1a; /* Near-black background for the header */
             padding: 1.5rem 0;
-            border-bottom: 2px solid #444;
+            border-bottom: 2px solid #333;
+            text-align: center;
         }
 
         header h1 {
             color: #e0e0e0;
             margin-bottom: 0.5rem;
+            font-size: 2.5rem;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 1rem;
-        }
-
-        nav ul li {
-            margin: 0;
+            gap: 2rem;
         }
 
         nav ul li a {
             color: #e0e0e0;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.1rem;
         }
 
         nav ul li a:hover {
-            color: #f0f0f0;
-            border-bottom: 2px solid #e0e0e0;
+            color: #00bfff; /* Bright blue hover effect */
+            border-bottom: 2px solid #00bfff;
         }
 
         /* Main content styling */
@@ -66,26 +65,44 @@
         }
 
         article {
-            background: #1e1e1e;
+            background: #1f1f1f;
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
         }
 
         article h2 {
             color: #e0e0e0;
             margin-bottom: 0.5rem;
+            font-size: 1.8rem;
         }
 
         article p {
-            color: #c0c0c0;
+            color: #b0b0b0; /* Slightly dimmer text for body */
+        }
+
+        /* Button styling */
+        .cta-button {
+            display: inline-block;
+            background-color: #00bfff; /* Bright blue */
+            color: #0d0d0d;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #007acc; /* Darker blue on hover */
         }
 
         /* Footer styling */
         footer {
-            background: linear-gradient(90deg, #1f1f1f, #333);
+            background: #1a1a1a; /* Dark footer */
             padding: 1.5rem 0;
-            border-top: 2px solid #444;
+            border-top: 2px solid #333;
             text-align: center;
         }
 
@@ -113,11 +130,13 @@
             <article>
                 <h2>Blog Post Title</h2>
                 <p>This is a sample blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae accumsan lacus.</p>
+                <a href="#" class="cta-button">Read More</a>
             </article>
 
             <article>
                 <h2>Another Post Title</h2>
                 <p>This is another sample blog post. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc ut erat id mauris.</p>
+                <a href="#" class="cta-button">Read More</a>
             </article>
         </div>
     </main>

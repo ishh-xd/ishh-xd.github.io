@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,25 +14,28 @@
             box-sizing: border-box;
         }
 
-        /* Custom Scrollbar */
+        /* Scrollbar Styling */
         html {
-            overflow-y: scroll; /* Ensures scrollbar is always visible */
-        }
-        ::-webkit-scrollbar {
-            width: 8px; /* Slim scrollbar */
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: #6bcf4b; /* Greenish color for scrollbar thumb */
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background-color: #1a1a1a; /* Background of scrollbar track */
+            overflow-y: scroll;
         }
 
-        /* General styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #6bcf4b;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #1a1a1a;
+        }
+
+        /* Default (Dark Mode) */
         body {
-            background-color: #0d0d0d; /* Dark background */
-            color: #ffffff; /* White text */
+            background-color: #0d0d0d;
+            color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             overflow-y: scroll;
@@ -43,9 +47,9 @@
             padding: 0 1rem;
         }
 
-        /* Header styling */
+        /* Header */
         header {
-            background: #1a1a1a; /* Near-black background */
+            background: #1a1a1a;
             padding: 1.5rem 0;
             border-bottom: 2px solid #333;
             text-align: center;
@@ -62,11 +66,11 @@
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 2rem; /* Add spacing between the links */
+            gap: 2rem;
         }
 
         nav ul li {
-            display: inline-block; /* Makes sure they align properly in a row */
+            display: inline-block;
         }
 
         nav ul li a {
@@ -79,11 +83,11 @@
         }
 
         nav ul li a:hover {
-            color: #6bcf4b; /* Green hover effect */
+            color: #6bcf4b;
             border-bottom: 2px solid #6bcf4b;
         }
 
-        /* Main content styling */
+        /* Main content */
         main {
             padding: 2rem 0;
             text-align: center;
@@ -94,7 +98,7 @@
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         article h2 {
@@ -104,13 +108,13 @@
         }
 
         article p {
-            color: #b0b0b0; /* Slightly dimmer text for body */
+            color: #b0b0b0;
         }
 
-        /* Button styling */
+        /* Button */
         .cta-button {
             display: inline-block;
-            background-color: #6bcf4b; /* Green button */
+            background-color: #6bcf4b;
             color: #0d0d0d;
             padding: 0.75rem 1.5rem;
             text-decoration: none;
@@ -121,13 +125,13 @@
         }
 
         .cta-button:hover {
-            background-color: #0d0d0d; /* Dark background on hover */
-            color: #6bcf4b; /* Green text on hover */
+            background-color: #0d0d0d;
+            color: #6bcf4b;
         }
 
-        /* Footer styling */
+        /* Footer */
         footer {
-            background: #1a1a1a; /* Dark footer */
+            background: #1a1a1a;
             padding: 1.5rem 0;
             border-top: 2px solid #333;
             text-align: center;
@@ -137,7 +141,65 @@
             color: #ffffff;
         }
 
-        /* Responsive design */
+        /* Light Mode Styling */
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #f4f4f4;
+                color: #333333;
+            }
+
+            header {
+                background: #ffffff;
+                border-bottom: 2px solid #ddd;
+            }
+
+            header h1 {
+                color: #333333;
+            }
+
+            nav ul li a {
+                color: #333333;
+            }
+
+            nav ul li a:hover {
+                color: #6bcf4b;
+                border-bottom: 2px solid #6bcf4b;
+            }
+
+            article {
+                background: #ffffff;
+                color: #333333;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            article h2 {
+                color: #333333;
+            }
+
+            article p {
+                color: #555555;
+            }
+
+            footer {
+                background: #ffffff;
+                border-top: 2px solid #ddd;
+            }
+
+            footer p {
+                color: #333333;
+            }
+
+            /* Light mode scrollbar */
+            ::-webkit-scrollbar-thumb {
+                background-color: #6bcf4b;
+            }
+
+            ::-webkit-scrollbar-track {
+                background-color: #f4f4f4;
+            }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;

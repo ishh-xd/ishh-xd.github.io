@@ -1,60 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Under Maintenance</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Blog</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container {
-      text-align: center;
-    }
+        /* General styling */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
+        /* Header styling */
+        header {
+            background: linear-gradient(90deg, #1f1f1f, #333);
+            padding: 1.5rem 0;
+            border-bottom: 2px solid #444;
+        }
 
-    .illustration {
-      width: 80%;
-      max-width: 400px;
-      margin-bottom: 30px;
-    }
+        header h1 {
+            color: #e0e0e0;
+            margin-bottom: 0.5rem;
+        }
 
-    @media only screen and (max-width: 600px) {
-      h1 {
-        font-size: 24px;
-      }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
 
-      p {
-        font-size: 16px;
-      }
-    }
-  </style>
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #f0f0f0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        /* Main content styling */
+        main {
+            padding: 2rem 0;
+        }
+
+        article {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        article h2 {
+            color: #e0e0e0;
+            margin-bottom: 0.5rem;
+        }
+
+        article p {
+            color: #c0c0c0;
+        }
+
+        /* Footer styling */
+        footer {
+            background: linear-gradient(90deg, #1f1f1f, #333);
+            padding: 1.5rem 0;
+            border-top: 2px solid #444;
+            text-align: center;
+        }
+
+        footer p {
+            color: #e0e0e0;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>My Dark Mode Blog</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <div class="container">
-    <img src="https://us-east-1.tixte.net/uploads/ishh.likes.cash/maintenance.png" alt="Under Maintenance" class="illustration">
-    <h1>Sorry, we're under maintenance!</h1>
-    <p>We're working hard to improve our website. Please check back later.</p>
-  </div>
+    <main>
+        <div class="container">
+            <article>
+                <h2>Blog Post Title</h2>
+                <p>This is a sample blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae accumsan lacus.</p>
+            </article>
 
+            <article>
+                <h2>Another Post Title</h2>
+                <p>This is another sample blog post. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc ut erat id mauris.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Dark Mode Blog. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

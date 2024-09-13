@@ -2,7 +2,7 @@
 /* Reset margins and paddings */
 * {
     margin: 0;
-    padding: 0;
+    padding: 0; 
     box-sizing: border-box;
 }
 
@@ -96,7 +96,7 @@ article {
 }
 
 body.light-mode article {
-    background-color: #ffffff;
+    background-color: pink;
     color: #000000; /* Black text in light mode */
     box-shadow: 0 0 15px rgba(200, 200, 200, 0.3);
 margin: 2rem auto;
@@ -106,12 +106,13 @@ margin: 2rem auto;
 }
 
 body.dark-mode article {
+   
     margin: 2rem auto;
     padding: 2rem;
     max-width: 600px;
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    background-color: #1A1A1A;
+    
 }
 
 h2 {

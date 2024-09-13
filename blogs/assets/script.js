@@ -1,5 +1,4 @@
-
-// Get the toggle button and the body
+// huh Get the toggle button and the body
 const toggleButton = document.getElementById('theme-toggle');
 const body = document.body;
 const toggleIcon = toggleButton.querySelector('img');

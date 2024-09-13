@@ -7,6 +7,7 @@ const toggleIcon = toggleButton.querySelector('img');
 // Check localStorage for the preferred theme and apply it
 const currentTheme = localStorage.getItem('theme') || 'dark-mode'; // Default to dark mode
 body.classList.add(currentTheme);
+
 toggleIcon.src = currentTheme === 'light-mode'
     ? 'https://img.icons8.com/ios-glyphs/30/000000/moon-symbol.png'
     : 'https://img.icons8.com/ios-glyphs/30/ffffff/sun--v1.png';

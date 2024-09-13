@@ -7,21 +7,14 @@
 }
 
 /* Default Dark Mode */
-body {
+body.dark-mode {
     background-color: #0d0d0d;
     color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-y: scroll;
 }
 
-.light-mode {
+body.light-mode {
     background-color: #f4f4f4;
     color: #333333;
-}
-
-.dark-mode {
-    background-color: #0d0d0d;
-    color: #ffffff;
 }
 
 /* Scrollbar Styling */
@@ -38,7 +31,7 @@ body {
     background-color: #1a1a1a;
 }
 
-.light-mode ::-webkit-scrollbar-track {
+body.light-mode ::-webkit-scrollbar-track {
     background-color: #dddddd;
 }
 
@@ -66,33 +59,60 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
+    color: #6bcf4b;
     border-bottom: 2px solid #6bcf4b;
 }
 
+body.light-mode nav ul li a {
+    color: #333333;
+}
+
 /* Light Mode Specific Styles */
-.light-mode header {
-    background-color: #ffffff;
+header, footer {
     border-bottom: 2px solid #ddd;
 }
 
-.light-mode article {
+body.light-mode header,
+body.light-mode footer {
+    background-color: #ffffff;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #1a1a1a;
+}
+
+article {
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 600px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode article {
     background-color: #ffffff;
     color: #333333;
+    box-shadow: 0 0 15px rgba(200, 200, 200, 0.3);
 }
 
-.light-mode footer {
-    background-color: #ffffff;
-    border-top: 2px solid #ddd;
+body.dark-mode article {
+    background-color: #1a1a1a;
 }
 
-.light-mode .cta-button {
-    background-color: #6bcf4b;
-    color: #333333;
+h2 {
+    color: #6bcf4b;
 }
 
-.dark-mode .cta-button {
+.cta-button {
+    display: inline-block;
+    margin-top: 1rem;
     background-color: #6bcf4b;
     color: #0d0d0d;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 /* Toggle Button as Icon */
@@ -114,50 +134,6 @@ nav ul li a.active {
     outline: none;
 }
 
-#theme-toggle:active {
-    background-color: transparent;
-}
-
 #theme-toggle:hover img {
     transform: rotate(180deg);
-}
-
-/* Remove blue background on click */
-#theme-toggle:focus,
-#theme-toggle:active {
-    outline: none;
-    background-color: transparent;
-}
-
-button:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-button:active {
-    background-color: initial;
-}
-
-/* Blog Post Styling */
-article {
-    margin: 2rem auto;
-    padding: 2rem;
-    max-width: 600px;
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-}
-
-h2 {
-    color: #6bcf4b;
-}
-
-.cta-button {
-    display: inline-block;
-    margin-top: 1rem;
-    background-color: #6bcf4b;
-    color: #0d0d0d;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
 }

@@ -57,27 +57,15 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #6bcf4b;
-    border-bottom: 2px solid #6bcf4b;
-}
-
-.light-mode nav ul li a {
-    color: #333333;
-}
-
-.light-mode nav ul li a:hover,
-.light-mode nav ul li a.active {
-    color: #6bcf4b;
     border-bottom: 2px solid #6bcf4b;
 }
 
@@ -152,18 +140,11 @@ button:active {
 
 /* Blog Post Styling */
 article {
-    background-color: #1a1a1a;
     margin: 2rem auto;
     padding: 2rem;
     max-width: 600px;
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-}
-
-.light-mode article {
-    background-color: #ffffff;
-    color: #333333;
-    box-shadow: 0 0 15px rgba(200, 200, 200, 0.3);
 }
 
 h2 {

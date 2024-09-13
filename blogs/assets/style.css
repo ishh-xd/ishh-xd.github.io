@@ -111,7 +111,7 @@ body.dark-mode article {
     max-width: 600px;
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-
+    background-color: #1A1A1A;
 }
 
 h2 {

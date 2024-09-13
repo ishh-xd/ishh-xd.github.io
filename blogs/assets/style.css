@@ -1,5 +1,5 @@
 
-/* huh Reset margins and paddings */
+/* Reset margins and paddings */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ body.dark-mode {
 
 body.light-mode {
     background-color: #f4f4f4;
-    color: #000000; /* Ensure text is black in light mode */
+    color: #000000; /* Black text in light mode */
 }
 
 /* Scrollbar Styling */

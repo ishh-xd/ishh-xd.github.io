@@ -96,7 +96,7 @@ article {
 }
 
 body.light-mode article {
-    background-color: pink;
+    background-color: #ffffff;
     color: #000000; /* Black text in light mode */
     box-shadow: 0 0 15px rgba(200, 200, 200, 0.3);
 margin: 2rem auto;

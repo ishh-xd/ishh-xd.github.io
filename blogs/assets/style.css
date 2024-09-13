@@ -10,11 +10,13 @@
 body.dark-mode {
     background-color: #0d0d0d;
     color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-y: scroll;
 }
 
 body.light-mode {
     background-color: #f4f4f4;
-    color: #333333;
+    color: #000000; /* Ensure text is black in light mode */
 }
 
 /* Scrollbar Styling */
@@ -32,7 +34,7 @@ body.light-mode {
 }
 
 body.light-mode ::-webkit-scrollbar-track {
-    background-color: #dddddd;
+    background-color: #dddddd; /* Light mode scrollbar track */
 }
 
 /* Navigation */
@@ -50,6 +52,7 @@ nav ul li {
 }
 
 nav ul li a {
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
@@ -64,7 +67,7 @@ nav ul li a.active {
 }
 
 body.light-mode nav ul li a {
-    color: #333333;
+    color: #000000; /* Ensure text is black in light mode */
 }
 
 /* Light Mode Specific Styles */
@@ -92,7 +95,7 @@ article {
 
 body.light-mode article {
     background-color: #ffffff;
-    color: #333333;
+    color: #000000; /* Ensure text is black in light mode */
     box-shadow: 0 0 15px rgba(200, 200, 200, 0.3);
 }
 
@@ -108,7 +111,7 @@ h2 {
     display: inline-block;
     margin-top: 1rem;
     background-color: #6bcf4b;
-    color: #0d0d0d;
+    color: #000000; /* Ensure text is black on button in light mode */
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;

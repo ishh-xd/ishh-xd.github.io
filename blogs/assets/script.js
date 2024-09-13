@@ -1,5 +1,4 @@
-
-// l Get the toggle button and the body
+// Get the toggle button and the body
 const toggleButton = document.getElementById('theme-toggle');
 const body = document.body;
 const toggleIcon = toggleButton.querySelector('img');
@@ -17,10 +16,21 @@ function applyTheme(theme) {
 const savedTheme = localStorage.getItem('theme') || 'dark-mode'; // Default to dark mode if no theme is saved
 applyTheme(savedTheme);
 
+// Debounce function to prevent rapid multiple toggles
+function debounce(func, delay) {
+    let timeout;
+    return function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(func, delay);
+    };
+}
+
 // Toggle between light and dark mode
-toggleButton.addEventListener('click', () => {
+const toggleTheme = debounce(() => {
     const currentTheme = body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
     const newTheme = currentTheme === 'dark-mode' ? 'light-mode' : 'dark-mode';
     applyTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-});
+}, 300); // 300ms delay to debounce
+
+toggleButton.addEventListener('click', toggleTheme);

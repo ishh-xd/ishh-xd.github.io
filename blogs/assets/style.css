@@ -1,6 +1,5 @@
 
-
-/* Reset margins and paddings */
+/* huh Reset margins and paddings */
 * {
     margin: 0;
     padding: 0;
@@ -68,7 +67,7 @@ nav ul li a.active {
 }
 
 body.light-mode nav ul li a {
-    color: #000000; /* Ensure text is black in light mode */
+    color: #000000; /* Black text in light mode */
 }
 
 /* Light Mode Specific Styles */
@@ -96,7 +95,7 @@ article {
 
 body.light-mode article {
     background-color: #ffffff;
-    color: #000000; /* Ensure text is black in light mode */
+    color: #000000; /* Black text in light mode */
     box-shadow: 0 0 15px rgba(200, 200, 200, 0.3);
 }
 
@@ -112,7 +111,7 @@ h2 {
     display: inline-block;
     margin-top: 1rem;
     background-color: #6bcf4b;
-    color: #000000; /* Ensure text is black on button in light mode */
+    color: #000000; /* Black text on button in light mode */
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;

@@ -106,7 +106,7 @@ margin: 2rem auto;
 }
 
 body.dark-mode article {
-   
+   background-color: #1a1a1a;
     margin: 2rem auto;
     padding: 2rem;
     max-width: 600px;
@@ -116,7 +116,7 @@ body.dark-mode article {
 }
 
 h2 {
-    color: #000000;
+    color: #ffffff;
 }
 
 .cta-button {

@@ -8,7 +8,8 @@
     --background-color-dark: #0d0d0d;
     --background-color-light: #f4f4f4;
     --scrollbar-thumb-color: var(--highlight-color);
-     /* Dark Mode Colors */
+    
+    /* Dark Mode Colors */
     --dark-bg-color: var(--background-color-dark);
     --dark-text-color: var(--text-color-dark);
     --dark-highlight-color: var(--highlight-color);
@@ -25,7 +26,7 @@
     --light-bg-color: var(--background-color-light);
     --light-text-color: var(--text-color-light);
     --light-nav-link-color: var(--text-color-light);
-    --light-header-footer-bg:  #898f8b;
+    --light-header-footer-bg: #898f8b;
     --light-article-bg: #747a76;
     --light-article-shadow: rgba(200, 200, 200, 0.3);
     --light-h2-color: #1a1a1a;
@@ -33,8 +34,7 @@
     --light-author-name-color: var(--highlight-color);
     --light-designation-bg: #cccfcd;
     --light-designation-text: var(--text-color-light);
-
-    }
+}
 
 /* Reset margins and paddings */
 * {
@@ -42,7 +42,6 @@
     padding: 0; 
     box-sizing: border-box;
 }
-
 
 /* Default Dark Mode */
 body.dark-mode {
@@ -71,7 +70,7 @@ body.light-mode {
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 8px; /* Increased width for better visibility */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -119,7 +118,6 @@ nav ul li a.active {
 body.light-mode nav ul li a {
     color: var(--light-nav-link-color);
 }
-
 
 header {
     border-bottom: 2px solid #ddd;
@@ -210,8 +208,6 @@ body.light-mode .designation {
     color: var(--light-designation-text);
 }
 
-
-
 /* Toggle Button as Icon */
 #theme-toggle {
     background-color: transparent;
@@ -235,13 +231,14 @@ body.light-mode .designation {
 #theme-toggle:hover img {
     transform: rotate(180deg);
 }
+
 img {
     pointer-events: none;
 }
+
 /* Responsive Design Adjustments */
 @media (max-width: 768px) {
     article {
-      font-family: -apple-system-short-footnote;
         margin: 1rem;
         padding: 1rem;
         max-width: 90%;
@@ -251,8 +248,6 @@ img {
     h2 {
         font-size: 1.5rem;
     }
- 
-    
 
     .author {
         flex-direction: row;

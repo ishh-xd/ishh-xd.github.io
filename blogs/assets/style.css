@@ -120,9 +120,19 @@ body.light-mode nav ul li a {
     color: var(--light-nav-link-color);
 }
 
-/* Light Mode Specific Styles */
-header, footer {
+
+header {
     border-bottom: 2px solid #ddd;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+    padding: 10px;
 }
 
 body.light-mode header,

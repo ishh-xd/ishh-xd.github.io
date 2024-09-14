@@ -153,7 +153,7 @@ h2 {
     color: #ffffff; /* Adjust based on theme */
 }
 
-.read-time {
+.designation {
     background-color: #333; /* Adjust based on theme */
     color: #ffffff;
     padding: 0.2rem 0.5rem;
@@ -161,7 +161,19 @@ h2 {
     font-size: 0.8rem;
 }
 
+.author-name.light-mode {
+    font-weight: bold;
+    margin-right: 0.5rem;
+    color: #000000; 
+}
 
+.designation.light-mode {
+    background-color: #898f8b; /* Adjust based on theme */
+    color: #000000;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
 
 .cta-button {
     display: inline-block;

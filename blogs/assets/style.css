@@ -1,4 +1,3 @@
-
 /* Reset margins and paddings */
 * {
     margin: 0;
@@ -27,7 +26,7 @@ body.light-mode nav ul li a.active {
 body.light-mode {
     background-color: #f4f4f4;
     color: #000000; /* Black text in light mode */
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-y: scroll;
 }
 
@@ -109,10 +108,6 @@ body.light-mode article {
     background-color: #ffffff;
     color: #000000; /* Black text in light mode */
     box-shadow: 0 0 15px rgba(200, 200, 200, 0.3);
-margin: 2rem auto;
-    padding: 2rem;
-    max-width: 600px;
-    border-radius: 5px;
 }
 
 body.light-mode h2 {
@@ -121,18 +116,12 @@ body.light-mode h2 {
 
 body.dark-mode article {
    background-color: #1a1a1a;
-    margin: 2rem auto;
-    padding: 2rem;
-    max-width: 600px;
-    border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    
 }
 
 h2 {
     color: #ffffff;
 }
-
 
 .author {
     display: flex;
@@ -204,4 +193,32 @@ body.light-mode .designation {
 
 #theme-toggle:hover img {
     transform: rotate(180deg);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    article {
+        margin: 1rem; /* Reduce margins for smaller screens */
+        padding: 1rem; /* Reduce padding for smaller screens */
+        max-width: 90%; /* Use most of the screen width */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Slightly lighter shadow */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Adjust the font size for better readability */
+    }
+
+    .cta-button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem; /* Adjust button font size */
+    }
+
+    .author {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .author-image {
+        margin-bottom: 0.5rem; /* Add space between the image and text */
+    }
 }

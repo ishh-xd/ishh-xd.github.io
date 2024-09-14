@@ -147,6 +147,7 @@ h2 {
     margin-right: 0.5rem;
 }
 
+/* Default (dark mode) */
 .author-name {
     font-weight: bold;
     margin-right: 0.5rem;
@@ -161,18 +162,14 @@ h2 {
     font-size: 0.8rem;
 }
 
-.author-name.light-mode {
-    font-weight: bold;
-    margin-right: 0.5rem;
+/* Light mode */
+body.light-mode .author-name {
     color: #000000; 
 }
 
-.designation.light-mode {
+body.light-mode .designation {
     background-color: #898f8b; /* Adjust based on theme */
     color: #000000;
-    padding: 0.2rem 0.5rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
 }
 
 .cta-button {

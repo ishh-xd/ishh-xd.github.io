@@ -241,6 +241,7 @@ img {
 /* Responsive Design Adjustments */
 @media (max-width: 768px) {
     article {
+      font-family: -apple-system-short-footnote;
         margin: 1rem;
         padding: 1rem;
         max-width: 90%;

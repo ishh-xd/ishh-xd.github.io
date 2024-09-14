@@ -234,7 +234,9 @@ body.light-mode .designation {
 #theme-toggle:hover img {
     transform: rotate(180deg);
 }
-
+img {
+    pointer-events: none;
+}
 /* Responsive Design Adjustments */
 @media (max-width: 768px) {
     article {
@@ -247,11 +249,8 @@ body.light-mode .designation {
     h2 {
         font-size: 1.5rem;
     }
-
-    .cta-button {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-    }
+ 
+    
 
     .author {
         flex-direction: row;

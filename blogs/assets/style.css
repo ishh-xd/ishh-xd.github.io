@@ -1,3 +1,41 @@
+
+/* Root Variables */
+:root {
+    /* General Colors */
+    --highlight-color: #6bcf4b;
+    --text-color-dark: #ffffff;
+    --text-color-light: #000000;
+    --background-color-dark: #0d0d0d;
+    --background-color-light: #f4f4f4;
+    --scrollbar-thumb-color: #6bcf4b;
+     /* Dark Mode Colors */
+    --dark-bg-color: var(--background-color-dark);
+    --dark-text-color: var(--text-color-dark);
+    --dark-highlight-color: var(--highlight-color);
+    --dark-scrollbar-track-color: #1a1a1a;
+    --dark-nav-link-color: var(--text-color-dark);
+    --dark-header-footer-bg: #1a1a1a;
+    --dark-article-bg: #1a1a1a;
+    --dark-article-shadow: rgba(0, 0, 0, 0.3);
+    --dark-author-name-color: var(--highlight-color);
+    --dark-designation-bg: #333;
+    --dark-designation-text: var(--text-color-dark);
+
+    /* Light Mode Colors */
+    --light-bg-color: var(--background-color-light);
+    --light-text-color: var(--text-color-light);
+    --light-nav-link-color: var(--text-color-light);
+    --light-header-footer-bg: var(--background-color-light);
+    --light-article-bg: var(--background-color-light);
+    --light-article-shadow: rgba(200, 200, 200, 0.3);
+    --light-h2-color: #1a1a1a;
+    --light-scrollbar-track-color: #dddddd;
+    --light-author-name-color: var(--highlight-color);
+    --light-designation-bg: #898f8b;
+    --light-designation-text: var(--text-color-light);
+
+    }
+
 /* Reset margins and paddings */
 * {
     margin: 0;
@@ -7,25 +45,25 @@
 
 /* Default Dark Mode */
 body.dark-mode {
-    background-color: #0d0d0d;
-    color: #ffffff;
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-y: scroll;
 }
 
 /* Active Link Highlight */
 nav ul li a.active {
-    color: #6bcf4b;
-    border-bottom: 2px solid #6bcf4b;
+    color: var(--dark-highlight-color);
+    border-bottom: 2px solid var(--dark-highlight-color);
 }
 
 body.light-mode nav ul li a.active {
-    color: #6bcf4b;
+    color: var(--dark-highlight-color);
 }
 
 body.light-mode {
-    background-color: #f4f4f4;
-    color: #000000; /* Black text in light mode */
+    background-color: var(--light-bg-color);
+    color: var(--light-text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-y: scroll;
 }
@@ -36,16 +74,16 @@ body.light-mode {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #6bcf4b;
+    background-color: var(--scrollbar-thumb-color);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #1a1a1a;
+    background-color: var(--dark-scrollbar-track-color);
 }
 
 body.light-mode ::-webkit-scrollbar-track {
-    background-color: #dddddd; /* Light mode scrollbar track */
+    background-color: var(--light-scrollbar-track-color);
 }
 
 /* Navigation */
@@ -63,7 +101,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: var(--dark-nav-link-color);
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
@@ -73,12 +111,12 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #6bcf4b;
-    border-bottom: 2px solid #6bcf4b;
+    color: var(--dark-highlight-color);
+    border-bottom: 2px solid var(--dark-highlight-color);
 }
 
 body.light-mode nav ul li a {
-    color: #000000; /* Black text in light mode */
+    color: var(--light-nav-link-color);
 }
 
 /* Light Mode Specific Styles */
@@ -88,12 +126,12 @@ header, footer {
 
 body.light-mode header,
 body.light-mode footer {
-    background-color: #ffffff;
+    background-color: var(--light-header-footer-bg);
 }
 
 body.dark-mode header,
 body.dark-mode footer {
-    background-color: #1a1a1a;
+    background-color: var(--dark-header-footer-bg);
 }
 
 article {
@@ -101,26 +139,26 @@ article {
     padding: 2rem;
     max-width: 600px;
     border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px var(--dark-article-shadow);
 }
 
 body.light-mode article {
-    background-color: #ffffff;
-    color: #000000; /* Black text in light mode */
-    box-shadow: 0 0 15px rgba(200, 200, 200, 0.3);
+    background-color: var(--light-article-bg);
+    color: var(--light-text-color);
+    box-shadow: 0 0 15px var(--light-article-shadow);
 }
 
 body.light-mode h2 {
-    color: #1a1a1a;
+    color: var(--light-h2-color);
 }
 
 body.dark-mode article {
-   background-color: #1a1a1a;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    background-color: var(--dark-article-bg);
+    box-shadow: 0 0 15px var(--dark-article-shadow);
 }
 
 h2 {
-    color: #ffffff;
+    color: var(--dark-text-color);
 }
 
 .author {
@@ -140,12 +178,12 @@ h2 {
 .author-name {
     font-weight: bold;
     margin-right: 0.5rem;
-    color: #6bcf4b; /* Adjust based on theme */
+    color: var(--dark-author-name-color);
 }
 
 .designation {
-    background-color: #333; /* Adjust based on theme */
-    color: #ffffff;
+    background-color: var(--dark-designation-bg);
+    color: var(--dark-designation-text);
     padding: 0.2rem 0.5rem;
     border-radius: 5px;
     font-size: 0.8rem;
@@ -153,29 +191,15 @@ h2 {
 
 /* Light mode */
 body.light-mode .author-name {
-    color: #116b19; 
+    color: var(--light-author-name-color);
 }
 
 body.light-mode .designation {
-    background-color: #898f8b; /* Adjust based on theme */
-    color: #000000;
+    background-color: var(--light-designation-bg);
+    color: var(--light-designation-text);
 }
 
-.cta-button {
-    display: inline-block;
-    margin-top: 1rem;
-    background-color: #6bcf4b;
-    color: #000000; /* Black text on button in light mode */
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
 
-img {
-    border:  0.5px solid #ccc; /* Light gray border */
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-}
 
 /* Toggle Button as Icon */
 #theme-toggle {
@@ -203,27 +227,27 @@ img {
 /* Responsive Design Adjustments */
 @media (max-width: 768px) {
     article {
-        margin: 1rem; /* Reduce margins for smaller screens */
-        padding: 1rem; /* Reduce padding for smaller screens */
-        max-width: 90%; /* Use most of the screen width */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Slightly lighter shadow */
+        margin: 1rem;
+        padding: 1rem;
+        max-width: 90%;
+        box-shadow: 0 0 10px var(--img-shadow-color);
     }
 
     h2 {
-        font-size: 1.5rem; /* Adjust the font size for better readability */
+        font-size: 1.5rem;
     }
 
     .cta-button {
         padding: 0.5rem 1rem;
-        font-size: 1rem; /* Adjust button font size */
+        font-size: 1rem;
     }
 
     .author {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        align-items: flex-start; /* Align items to the start */
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .author-image {
-        margin-bottom: 0.5rem; /* Add space between the image and text */
+        margin-bottom: 0.5rem;
     }
 }

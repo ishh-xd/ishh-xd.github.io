@@ -25,13 +25,13 @@
     --light-bg-color: var(--background-color-light);
     --light-text-color: var(--text-color-light);
     --light-nav-link-color: var(--text-color-light);
-    --light-header-footer-bg: var(--background-color-light);
+    --light-header-footer-bg:  #898f8b;
     --light-article-bg: var(--background-color-light);
     --light-article-shadow: rgba(200, 200, 200, 0.3);
     --light-h2-color: #1a1a1a;
     --light-scrollbar-track-color: #dddddd;
     --light-author-name-color: var(--highlight-color);
-    --light-designation-bg: #898f8b;
+    --light-designation-bg: var(--light-header-footer-bg);
     --light-designation-text: var(--text-color-light);
 
     }

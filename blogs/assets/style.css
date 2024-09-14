@@ -7,7 +7,7 @@
     --text-color-light: #000000;
     --background-color-dark: #0d0d0d;
     --background-color-light: #f4f4f4;
-    --scrollbar-thumb-color: #6bcf4b;
+    --scrollbar-thumb-color: var(--highlight-color);
      /* Dark Mode Colors */
     --dark-bg-color: var(--background-color-dark);
     --dark-text-color: var(--text-color-dark);

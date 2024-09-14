@@ -227,8 +227,9 @@ body.light-mode .designation {
     transition: transform 0.3s ease;
 }
 
-#theme-toggle:focus {
+#theme-toggle:focus, #theme-toggle:active {
     outline: none;
+    background-color: transparent; 
 }
 
 #theme-toggle:hover img {

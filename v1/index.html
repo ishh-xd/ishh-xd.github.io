@@ -20,9 +20,11 @@
             font-family: 'Cascadia Code', monospace; /* Monospace fallback */
             font-size: 16px;
             color: white;
-            padding: 0; /* Remove body padding */
             margin: 0;
             line-height: 1.6; /* Improved readability */
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
         }
 
         @media (max-width: 600px) {
@@ -47,7 +49,8 @@
             font-size: 14px;
             color: #f1f1f1;
             overflow-x: auto; /* Allow horizontal scrolling */
-            margin: 0; /* Remove margin to avoid extra space */
+            margin: 20px; /* Add side and top margins */
+            flex: 1; /* Allow the code block to grow */
         }
 
         /* Code block colors */
@@ -78,6 +81,7 @@
             color: #fff;
             border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle border */
             z-index: 1000;
+            margin-bottom: 20px; /* Space below the navbar */
         }
 
         .navbar h1 {

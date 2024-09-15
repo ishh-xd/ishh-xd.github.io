@@ -8,6 +8,8 @@ const trackArtist = document.getElementById('track-artist');
 
 const tracks = [
   { name: 'Starboy', artist: 'The Weeknd', src: 'music/Starboy.mp3' },
+  { name: 'Shootout', artist: 'Izzamuzzic and Julien Marchal', src: 'music/Shootout.mp3' },
+
   ];
 
 let trackIndex = 0;

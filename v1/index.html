@@ -9,7 +9,7 @@
             <h1>Ishh</h1>
         </div>
     </nav>
- 
+ <div class="codeBox">
     <pre><code class="lang-js"><span class="hljs-keyword2">const</span> about = <span class="hljs-keyword">new</span> <span class="hljs-keyword2">Object</span>({
 <span class="hljs-string">bio:</span> <span class="hljs-string2">"Dude really? Stop stalking me."</span>,
 <span class="hljs-string">pronouns:</span> [<span class="hljs-string2">"he"</span>, <span class="hljs-string2">"him"</span>],
@@ -25,7 +25,8 @@
 <span class="hljs-string">websites:</span> [<span class="hljs-string2">"https://ishh.is-a.dev"</span>],
 <span class="hljs-string">email:</span> <span class="hljs-string2">"ishh-xd.proton.me"</span>
 })
-</code></pre>
+</code></pre> </div>
+    
 <div class="icon-bar">
         <div class="sticky-icons">
             <a href="/?redirect=/blogs" class="icon"><i class="fa-solid fa-book"></i></a>
@@ -55,6 +56,12 @@ body {
     margin: 0;
 }
 
+.codeBox {
+  display: grid !important;
+  place-items: center !important; 
+  height: 100vh;
+}
+    
 @media (max-width: 600px) {
     body {
         font-size: 14px; /* Smaller font for mobile */

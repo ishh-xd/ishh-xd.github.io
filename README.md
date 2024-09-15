@@ -3,7 +3,8 @@ Live preview: https://ishh.is-a.dev
 
 ## Personal Webpage 
 - Blogs System
-- Versions of About Me
+- Versions of "About Me" 
+- Homepage '/' is redirect system. 
 - TXT Notes
 
 # Copyright

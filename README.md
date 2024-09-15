@@ -10,5 +10,5 @@ Live preview: https://ishh.is-a.dev
 
 
 # Copyright
-I have copied few things, credits are given in the folder. If something is owned by you please email "ishh-xd@proton.me" for removal.
-(Most of the things are owned and designed by me, so copying this repo is strictly not allowed.)
+I have copied few things online, used AI to fix bugs and pasted few things from other websites. If something is owned by you please email "ishh-xd@proton.me" for removal.
+(Coded and designed by me, so copying this repo is strictly not allowed.)

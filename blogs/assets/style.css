@@ -81,6 +81,10 @@ body.light-mode {
 ::-webkit-scrollbar-track {
     background-color: var(--dark-scrollbar-track-color);
 }
+button {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
 body.light-mode ::-webkit-scrollbar-track {
     background-color: var(--light-scrollbar-track-color);

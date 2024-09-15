@@ -1,3 +1,14 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body> 
+<nav>
+    <div class="navbar">
+        <h1>Ishh</h1>
+    </div>
+</nav>
+ 
 <pre><code class="lang-js"><span class="hljs-keyword2">const</span> about = <span class="hljs-keyword">new</span> <span class="hljs-keyword2">Object</span>({
 <span class="hljs-string">bio:</span> <span class="hljs-string2">"Dude really? Stop stalking me."</span>,
 <span class="hljs-string">pronouns:</span> [<span class="hljs-string2">"he"</span>, <span class="hljs-string2">"him"</span>],
@@ -14,9 +25,43 @@
 <span class="hljs-string">email:</span> <span class="hljs-string2">"ishh-xd.proton.me"</span>
 })
 </code></pre>
+</body>
+
+
 <style>
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url('https://raw.githubusercontent.com/microsoft/cascadia-code/main/CascadiaCode.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/microsoft/cascadia-code/main/CascadiaCode.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
  
-  
+body {
+ background: linear-gradient(135deg, #1c1c1e, #2c2c2e, #3a3a3c, #48484a);
+ font-family: 'Cascadia Code', monospace; /* Fall back to monospace if Cascadia isn't available */
+ font-size: 16px;
+ color: white;
+ padding: 10px;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Smaller font for mobile */
+    }
+}
+
+@media (min-width: 600px) {
+    body {
+        font-size: 16px; /* Normal font for larger devices */
+    }
+}
+
+pre {
+    white-space: pre-wrap; /* Ensures the code breaks lines on smaller screens */
+    word-wrap: break-word;
+}
+ 
     span {
         color: blue;
     }
@@ -30,4 +75,27 @@
     span.hljs-keyword2{
       color: purple;
     }
+
+/* Sticky Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(28, 28, 30, 0.9); /* Dark background with slight transparency */
+    padding: 15px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Using Poppins for a cool font look */
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle bottom border */
+    z-index: 1000; /* Ensures the navbar stays on top */
+}
+
+/* Hover Effect */
+.navbar h1:hover {
+    color: #f39c12; /* Changes color on hover */
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+ 
 </style>

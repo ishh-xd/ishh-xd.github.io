@@ -181,6 +181,8 @@ span.hljs-keyword2{
   cursor: pointer;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Softer shadow for depth */
   transition: transform 0.2s ease, background-color 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .control-button i {

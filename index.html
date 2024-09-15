@@ -1,13 +1,50 @@
- <br><br><br><br>
-<center>
- <h1>Redirecting...</h1>
-</center>
-<div class="container">
-           <a href="/v1"><div class="button">GO</div></a>
-        </div>
 
-<script>
-window.location.replace("/v1");
-  </script>
-<link rel="shortcut icon" type="image/x-icon" href="/v2/assets/icon.png">
-        <link rel="stylesheet" href="v2/css/app.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* White text */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            text-align: center;
+        }
+        .button {
+            background-color: #007aff; /* iOS blue */
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0051a8; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Redirecting...</h1>
+        <a href="/v1" class="button">GO</a>
+    </div>
+    <script>
+        // Automatically redirect after a short delay
+        setTimeout(function() {
+            window.location.replace("/v1");
+        }, 3000); // Adjust delay as needed
+    </script>
+</body>
+</html>

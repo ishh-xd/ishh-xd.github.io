@@ -68,6 +68,11 @@ pre {
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
     font-size: 14px; /* Slightly smaller font inside the pre */
     color: #f1f1f1; /* Light text color for better contrast */
+    width: 90%; /* Full width for smaller screens */
+    max-width: 600px; /* Maximum width on larger screens */
+    margin: 40px auto; /* Centering with margin */
+    text-align: left;
+    word-wrap: break-word; /* Ensure text wraps inside the box */
 }
 
 /* Code block colors */
@@ -78,12 +83,10 @@ span {
 span.hljs-string {
     color: #ff6188; /* Pinkish red for strings */
 }
-
-span.hljs-keyword {
+span.hljs-keyword{
     color: #ffd866; /* Yellow for keywords */
 }
-
-span.hljs-keyword2 {
+span.hljs-keyword2{
     color: #ab9df2; /* Soft purple for other keywords */
 }
 
@@ -107,25 +110,11 @@ span.hljs-keyword2 {
     margin: 0;
 }
 
-/* PC Optimizations */
-@media (min-width: 1024px) {
-    body {
-        font-size: 18px; /* Larger font for desktops */
-        padding: 40px; /* Increase padding for PC */
-    }
-
-    /* Pre Code Block styling for PC */
+@media (min-width: 768px) {
     pre {
-        font-size: 16px; /* Larger font inside the pre block */
-        padding: 30px; /* More padding */
-        max-width: 900px; /* Limit the width of the pre block */
-        margin: 0 auto; /* Center the code block on the page */
-    }
-
-    /* Navbar adjustments for larger screens */
-    .navbar {
-        font-size: 32px; /* Increase navbar text size for desktops */
-        padding: 20px 0; /* More padding */
+        padding: 30px;
+        font-size: 16px; /* Slightly bigger font for larger screens */
+        margin: 60px auto; /* More margin for better spacing on PC */
     }
 }
 </style>

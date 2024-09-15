@@ -78,10 +78,12 @@ span {
 span.hljs-string {
     color: #ff6188; /* Pinkish red for strings */
 }
-span.hljs-keyword{
+
+span.hljs-keyword {
     color: #ffd866; /* Yellow for keywords */
 }
-span.hljs-keyword2{
+
+span.hljs-keyword2 {
     color: #ab9df2; /* Soft purple for other keywords */
 }
 
@@ -105,5 +107,25 @@ span.hljs-keyword2{
     margin: 0;
 }
 
-/* Remove hover effect from navbar text */
+/* PC Optimizations */
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px; /* Larger font for desktops */
+        padding: 40px; /* Increase padding for PC */
+    }
+
+    /* Pre Code Block styling for PC */
+    pre {
+        font-size: 16px; /* Larger font inside the pre block */
+        padding: 30px; /* More padding */
+        max-width: 900px; /* Limit the width of the pre block */
+        margin: 0 auto; /* Center the code block on the page */
+    }
+
+    /* Navbar adjustments for larger screens */
+    .navbar {
+        font-size: 32px; /* Increase navbar text size for desktops */
+        padding: 20px 0; /* More padding */
+    }
+}
 </style>

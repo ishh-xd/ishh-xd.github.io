@@ -1,6 +1,8 @@
 @font-face {
   font-family: 'Suse_Med';
-  src: url('/SUSE-Medium.ttf'); 
+  src: url('/SUSE-Medium.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
 }
 /* Root Variables */
 :root {

@@ -7,7 +7,7 @@ const trackName = document.getElementById('track-name');
 const trackArtist = document.getElementById('track-artist');
 
 const tracks = [
-  { name: 'Starboy', artist: 'The Weeknd', src: 'music/track1.mp3' },
+  { name: 'Starboy', artist: 'The Weeknd', src: 'music/Starboy.mp3' },
   ];
 
 let trackIndex = 0;

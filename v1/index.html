@@ -1,94 +1,8 @@
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ishh</title>
-    <style>
-        @font-face {
-            font-family: 'Cascadia Code';
-            src: url('https://raw.githubusercontent.com/microsoft/cascadia-code/main/CascadiaCode.woff2') format('woff2'),
-                 url('https://raw.githubusercontent.com/microsoft/cascadia-code/main/CascadiaCode.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        /* Dark theme for body */
-        body {
-            background: linear-gradient(135deg, #2b2b2d, #1e1e20); /* Dark gradient */
-            font-family: 'Cascadia Code', monospace; /* Monospace fallback */
-            font-size: 16px;
-            color: white;
-            margin: 0;
-            line-height: 1.6; /* Improved readability */
-            height: 100vh; /* Full viewport height */
-            display: flex;
-            flex-direction: column;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                font-size: 14px; /* Smaller font for mobile */
-            }
-        }
-
-        @media (min-width: 600px) {
-            body {
-                font-size: 16px; /* Normal font for larger devices */
-            }
-        }
-
-        /* Code block style */
-        pre {
-            background: linear-gradient(145deg, #262628, #1c1c1e); /* Matching gradient */
-            padding: 20px;
-            border-radius: 12px; /* Rounded corners */
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
-            font-size: 14px;
-            color: #f1f1f1;
-            overflow-x: auto; /* Allow horizontal scrolling */
-            margin: 20px; /* Add side and top margins */
-            flex: 1; /* Allow the code block to grow */
-        }
-
-        /* Code block colors */
-        span {
-            color: #76baff; /* Default text color */
-        }
-
-        span.hljs-string {
-            color: #ff6188; /* String color */
-        }
-        span.hljs-keyword {
-            color: #ffd866; /* Keyword color */
-        }
-        span.hljs-keyword2 {
-            color: #ab9df2; /* Other keywords color */
-        }
-
-        /* Navbar styling */
-        .navbar {
-            position: sticky;
-            top: 0;
-            background: rgba(44, 44, 46, 0.9); /* Dark background */
-            padding: 15px;
-            text-align: center;
-            font-family: 'Poppins', sans-serif; /* Poppins font */
-            font-size: 24px;
-            font-weight: 600;
-            color: #fff;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle border */
-            z-index: 1000;
-            margin-bottom: 20px; /* Space below the navbar */
-        }
-
-        .navbar h1 {
-            margin: 0;
-        }
-    </style>
 </head>
+
 <body> 
     <nav>
         <div class="navbar">
@@ -99,7 +13,7 @@
     <pre><code class="lang-js"><span class="hljs-keyword2">const</span> about = <span class="hljs-keyword">new</span> <span class="hljs-keyword2">Object</span>({
 <span class="hljs-string">bio:</span> <span class="hljs-string2">"Dude really? Stop stalking me."</span>,
 <span class="hljs-string">pronouns:</span> [<span class="hljs-string2">"he"</span>, <span class="hljs-string2">"him"</span>],
-<span class="hljs-string">age:</span> <span class="hljs-keyword">undefined</span>,
+<span class="hljs-string">age:</span> <span class="hljs-keyword">undefind</span>,
 <span class="hljs-string">skills:</span> [{
 <span class="hljs-string">javascript:</span> <span class="hljs-string2">"Good"</span>,
 <span class="hljs-string">mongodb:</span> <span class="hljs-string2">"Proficient"</span>,
@@ -113,4 +27,83 @@
 })
 </code></pre>
 </body>
-</html>
+
+<style>
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url('https://raw.githubusercontent.com/microsoft/cascadia-code/main/CascadiaCode.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/microsoft/cascadia-code/main/CascadiaCode.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* iPhone-like dark theme for body */
+body {
+    background: linear-gradient(135deg, #2b2b2d, #1e1e20); /* Dark, smooth gradient */
+    font-family: 'Cascadia Code', monospace; /* Fall back to monospace if Cascadia isn't available */
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Smaller font for mobile */
+    }
+}
+
+@media (min-width: 600px) {
+    body {
+        font-size: 16px; /* Normal font for larger devices */
+    }
+}
+
+/* Code block style with matching gradient */
+pre {
+    background: linear-gradient(145deg, #262628, #1c1c1e); /* Matching dark gradient */
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    font-size: 14px; /* Slightly smaller font inside the pre */
+    color: #f1f1f1; /* Light text color for better contrast */
+}
+
+/* Code block colors */
+span {
+    color: #76baff; /* Light blue for default text */
+}
+
+span.hljs-string {
+    color: #ff6188; /* Pinkish red for strings */
+}
+span.hljs-keyword{
+    color: #ffd866; /* Yellow for keywords */
+}
+span.hljs-keyword2{
+    color: #ab9df2; /* Soft purple for other keywords */
+}
+
+/* Sticky Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(44, 44, 46, 0.9); /* Matching dark background for navbar */
+    padding: 15px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Using Poppins for a cool font look */
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle bottom border */
+    z-index: 1000; /* Ensures the navbar stays on top */
+}
+
+/* Navbar text styling */
+.navbar h1 {
+    margin: 0;
+}
+
+/* Remove hover effect from navbar text */
+</style>

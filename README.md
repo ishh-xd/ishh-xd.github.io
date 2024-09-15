@@ -5,7 +5,9 @@ Live preview: https://ishh.is-a.dev
 - Blogs System
 - Versions of "About Me" 
 - Homepage '/' is redirect system. 
+- Deprecation Page
 - TXT Notes
+
 
 # Copyright
 I have copied few things, credits are given in the folder. If something is owned by you please email "ishh-xd@proton.me" for removal.

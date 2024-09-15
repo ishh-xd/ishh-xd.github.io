@@ -4,6 +4,7 @@ Live preview: https://ishh.is-a.dev
 (This site is literally being updated after half a year. Lazy me.)
 
 ## Personal Webpage 
+![ishh.is-a.dev](https://us-east-1.tixte.net/uploads/ishh.likes.cash/Ishh.jpeg "Thumbnail")
 
 ### Features
 - Aesthetic Dark Theme

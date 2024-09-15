@@ -132,6 +132,7 @@ span.hljs-keyword2{
 }
 
 
+
 /* Music */
 
 .player-container {
@@ -172,22 +173,28 @@ span.hljs-keyword2{
 .control-button {
   background-color: #333;
   border: none;
-  padding: 8px;
+  padding: 10px; /* Slightly larger padding for better click targets */
   border-radius: 50%;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px; /* Increased font size for better visibility */
   cursor: pointer;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Softer shadow for depth */
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .control-button i {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .control-button:hover {
   background-color: #007aff;
-  box-shadow: 0px 6px 15px rgba(0, 122, 255, 0.5);
+  transform: scale(1.1); /* Add a scaling effect on hover */
+  box-shadow: 0px 6px 15px rgba(0, 122, 255, 0.5); /* A stronger shadow on hover */
+}
+
+.control-button:active {
+  transform: scale(0.95); /* A smaller scaling effect when clicked */
+  box-shadow: 0px 4px 8px rgba(0, 122, 255, 0.4); /* Softer shadow on active click */
 }
 
 .progress-container {
@@ -212,12 +219,28 @@ span.hljs-keyword2{
   .player-container {
     width: 600px;  /* Fixed width on larger screens */
   }
+
+  .control-button {
+    padding: 12px; /* Larger padding on larger screens */
+    font-size: 20px; /* Larger icon size on PC */
+  }
+
+  .control-button i {
+    font-size: 18px; /* Adjust icon size accordingly */
+  }
 }
 
 @media (max-width: 600px) {
   .player-container {
     width: 90%;  /* Responsive for smaller devices */
   }
+
+  .control-button {
+    padding: 8px; /* Slightly smaller padding on smaller screens */
+    font-size: 16px; /* Adjust icon size for mobile */
+  }
+
+  .control-button i {
+    font-size: 14px; /* Adjust icon size accordingly */
+  }
 }
-
-

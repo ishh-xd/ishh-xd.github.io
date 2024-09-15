@@ -14,7 +14,7 @@ body {
     color: white;
     padding: 10px;
     margin: 0;
-    min-height: 100vh;
+    height: 100%;
     overflow: hidden;
     }
 
@@ -48,6 +48,7 @@ pre {
     max-width: 600px; /* Maximum width on larger screens */
     margin: 40px auto; /* Centering with margin */
     text-align: left;
+    overflow: hidden;
     word-wrap: break-word; /* Ensure text wraps inside the box */
 }
 

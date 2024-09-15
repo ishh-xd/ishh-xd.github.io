@@ -1,0 +1,222 @@
+
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url('https://raw.githubusercontent.com/microsoft/cascadia-code/main/CascadiaCode.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/microsoft/cascadia-code/main/CascadiaCode.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: linear-gradient(145deg, #0a0a0b, #000000);
+    font-family: 'Cascadia Code', monospace; /* Fall back to monospace if Cascadia isn't available */
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    margin: 0;
+}
+
+.codeBox {
+    display: grid !important;
+    place-items: center !important; 
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Smaller font for mobile */
+    }
+}
+
+@media (min-width: 600px) {
+    body {
+        font-size: 16px; /* Normal font for larger devices */
+    }
+}
+
+/* Code block style with matching gradient */
+pre {
+    background: linear-gradient(145deg, #262628, #1c1c1e); /* Matching dark gradient */
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    font-size: 14px; /* Slightly smaller font inside the pre */
+    color: #f1f1f1; /* Light text color for better contrast */
+    width: 90%; /* Full width for smaller screens */
+    max-width: 600px; /* Maximum width on larger screens */
+    margin: 40px auto; /* Centering with margin */
+    text-align: left;
+    word-wrap: break-word; /* Ensure text wraps inside the box */
+}
+
+/* Code block colors */
+span {
+    color: #76baff; /* Light blue for default text */
+}
+
+span.hljs-string {
+    color: #ff6188; /* Pinkish red for strings */
+}
+span.hljs-keyword{
+    color: #ffd866; /* Yellow for keywords */
+}
+span.hljs-keyword2{
+    color: #ab9df2; /* Soft purple for other keywords */
+}
+
+/* Sticky Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(44, 44, 46, 0.9); /* Matching dark background for navbar */
+    padding: 15px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Using Poppins for a cool font look */
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle bottom border */
+    z-index: 1000; /* Ensures the navbar stays on top */
+}
+
+/* Navbar text styling */
+.navbar h1 {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    pre {
+        padding: 30px;
+        font-size: 16px; /* Slightly bigger font for larger screens */
+        margin: 60px auto; /* More margin for better spacing on PC */
+    }
+}
+
+.icon-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 25px; 
+    padding: 6px;
+}
+.sticky-icons {
+    display: flex;
+    gap: 8px;
+}
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; 
+    opacity: 0.5;
+    padding: 6px; 
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.icon:hover {
+    opacity: 1;
+    background-color: transparent;
+} 
+.icon:focus,
+.icon:active {
+    background-color: transparent !important;
+    box-shadow: none !important; 
+    border: none !important; 
+    color: inherit !important; 
+}
+
+
+/* Music */
+
+.player-container {
+  background: linear-gradient(145deg, #1c1c1e, #2c2c2e);
+  border-radius: 20px;
+  padding: 15px;
+  width: 90%;  /* Max width for mobile */
+  max-width: 600px;  /* Limit width on larger screens */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #fff;
+  position: relative;  /* Ensure it stays above the footer */
+  margin-bottom: 20px;  /* Spacing above the footer */
+}
+
+.track-details {
+  margin-bottom: 15px;
+}
+
+#track-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#track-artist {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.control-button {
+  background-color: #333;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.control-button i {
+  font-size: 14px;
+}
+
+.control-button:hover {
+  background-color: #007aff;
+  box-shadow: 0px 6px 15px rgba(0, 122, 255, 0.5);
+}
+
+.progress-container {
+  background-color: #3a3a3c;
+  border-radius: 10px;
+  height: 4px;
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+}
+
+#progress-bar {
+  background-color: #007aff;
+  border-radius: 10px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 600px) {
+  .player-container {
+    width: 600px;  /* Fixed width on larger screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .player-container {
+    width: 90%;  /* Responsive for smaller devices */
+  }
+}
+
+

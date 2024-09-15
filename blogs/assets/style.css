@@ -236,6 +236,12 @@ body.light-mode .designation {
 
 img {
     pointer-events: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* Responsive Design Adjustments */

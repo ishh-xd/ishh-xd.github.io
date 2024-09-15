@@ -4,6 +4,9 @@ Live preview: https://ishh.is-a.dev
 (This site is literally being updated after half a year. Lazy me.)
 
 ## Personal Webpage 
+
+### Features
+- Aesthetic Dark Theme
 - Blogs System
 - Versions of "About Me" 
 - Homepage '/' is redirect system. 

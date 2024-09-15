@@ -102,6 +102,7 @@ span.hljs-keyword2{
     background-color: rgba(128, 128, 128, 0.5);
     border-radius: 25px; 
     padding: 6px;
+    overflow: hidden;
 }
 .sticky-icons {
     display: flex;

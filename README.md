@@ -9,7 +9,8 @@ Live preview: https://ishh.is-a.dev
 ### Features
 - Aesthetic Dark Theme
 - Blogs System
-- Versions of "About Me" 
+- About Me (Codeblock: JavaScript)
+- Music Player 
 - Homepage '/' is redirect system. 
 - Deprecation Page
 - TXT Notes

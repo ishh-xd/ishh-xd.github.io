@@ -1,4 +1,7 @@
-
+@font-face {
+  font-family: 'Suse_Med';
+  src: url('/SUSE-Medium.ttf'); 
+}
 /* Root Variables */
 :root {
     /* General Colors */
@@ -153,7 +156,7 @@ article {
     max-width: 600px;
     border-radius: 5px;
     box-shadow: 0 0 15px var(--dark-article-shadow);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Suse_Med', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 body.light-mode article {

@@ -38,12 +38,21 @@
 <body>
     <div>
         <h1>Redirecting...</h1>
-        <a href="/v1" class="button">GO</a>
+        <a href="/v1" class="button">Home</a>
     </div>
     <script>
+        // Function to get query parameters from the URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Redirect based on the 'redirect' query parameter or default to '/v1'
+        const redirectTo = getQueryParam('redirect') || '/v1';
+
         // Automatically redirect after a short delay
         setTimeout(function() {
-            window.location.replace("/v1");
+            window.location.replace(redirectTo);
         }, 3000); // Adjust delay as needed
     </script>
 </body>

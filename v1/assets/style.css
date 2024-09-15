@@ -16,7 +16,10 @@ body {
     margin: 0;
     height: 100vh;
     overflow: hidden;
-    }
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+}
 
 .codeBox {
     display: grid !important;
@@ -185,9 +188,7 @@ span.hljs-keyword2{
     cursor: pointer;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, background-color 0.3s ease;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+    }
 
 .control-button i {
     font-size: 20px; /* Adjust icon size */

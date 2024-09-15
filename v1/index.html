@@ -1,15 +1,16 @@
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body> 
-<nav>
-    <div class="navbar">
-        <h1>Ishh</h1>
-    </div>
-</nav>
+    <nav>
+        <div class="navbar">
+            <h1>Ishh</h1>
+        </div>
+    </nav>
  
-<pre><code class="lang-js"><span class="hljs-keyword2">const</span> about = <span class="hljs-keyword">new</span> <span class="hljs-keyword2">Object</span>({
+    <pre><code class="lang-js"><span class="hljs-keyword2">const</span> about = <span class="hljs-keyword">new</span> <span class="hljs-keyword2">Object</span>({
 <span class="hljs-string">bio:</span> <span class="hljs-string2">"Dude really? Stop stalking me."</span>,
 <span class="hljs-string">pronouns:</span> [<span class="hljs-string2">"he"</span>, <span class="hljs-string2">"him"</span>],
 <span class="hljs-string">age:</span> <span class="hljs-keyword">undefind</span>,
@@ -27,7 +28,6 @@
 </code></pre>
 </body>
 
-
 <style>
 @font-face {
     font-family: 'Cascadia Code';
@@ -36,13 +36,15 @@
     font-weight: normal;
     font-style: normal;
 }
- 
+
+/* iPhone-like dark theme for body */
 body {
- background: linear-gradient(135deg, #1c1c1e, #2c2c2e, #3a3a3c, #48484a);
- font-family: 'Cascadia Code', monospace; /* Fall back to monospace if Cascadia isn't available */
- font-size: 16px;
- color: white;
- padding: 10px;
+    background: linear-gradient(135deg, #2b2b2d, #1e1e20); /* Dark, smooth gradient */
+    font-family: 'Cascadia Code', monospace; /* Fall back to monospace if Cascadia isn't available */
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    margin: 0;
 }
 
 @media (max-width: 600px) {
@@ -57,30 +59,36 @@ body {
     }
 }
 
+/* Code block style with matching gradient */
 pre {
-    white-space: pre-wrap; /* Ensures the code breaks lines on smaller screens */
-    word-wrap: break-word;
+    background: linear-gradient(145deg, #262628, #1c1c1e); /* Matching dark gradient */
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    font-size: 14px; 
+    color: #f1f1f1; 
 }
- 
-    span {
-        color: blue;
-    }
 
-    span.hljs-string {
-        color: red;
-    }
-    span.hljs-keyword{
-      color: orange;
-    }
-    span.hljs-keyword2{
-      color: purple;
-    }
+/* Code block colors */
+span {
+    color: #76baff; /* Light blue (default text) */
+}
 
-/* Sticky Navbar */
+span.hljs-string {
+    color: #ff6188; /* Pinkish red  (strings) */
+}
+span.hljs-keyword{
+    color: #ffd866; /* Yellow (keywords) */
+}
+span.hljs-keyword2{
+    color: #ab9df2; /* Soft purple (other keywords) */
+}
+
 .navbar {
     position: sticky;
     top: 0;
-    background: rgba(28, 28, 30, 0.9); /* Dark background with slight transparency */
+    background: rgba(44, 44, 46, 0.9); /* Matching dark background for navbar */
     padding: 15px;
     text-align: center;
     font-family: 'Poppins', sans-serif; /* Using Poppins for a cool font look */
@@ -88,14 +96,10 @@ pre {
     font-weight: 600;
     color: #fff;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle bottom border */
-    z-index: 1000; /* Ensures the navbar stays on top */
+    z-index: 1000; 
 }
 
-/* Hover Effect */
-.navbar h1:hover {
-    color: #f39c12; /* Changes color on hover */
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
+.navbar h1 {
+    margin: 0;
 }
- 
 </style>

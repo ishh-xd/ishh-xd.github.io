@@ -25,6 +25,14 @@
 <span class="hljs-string">email:</span> <span class="hljs-string2">"ishh-xd.proton.me"</span>
 })
 </code></pre>
+<div class="icon-bar">
+        <div class="sticky-icons">
+            <a href="#" class="icon"><i class="fab fa-home"></i></a>
+            <a href="#" class="icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="icon"><i class="fas fa-mail"></i></a>
+        </div>
+    </div>
+    
 </body>
 
 <style>
@@ -117,4 +125,45 @@ span.hljs-keyword2{
         margin: 60px auto; /* More margin for better spacing on PC */
     }
 }
+
+.icon-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 25px; 
+    padding: 6px;
+}
+.sticky-icons {
+    display: flex;
+    gap: 8px;
+}
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333; 
+    padding: 6px; 
+   -webkit-appearance: none;
+      -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.icon:hover {
+    color: #ffffff;
+    background-color: transparent;
+} 
+ .icon:focus,
+.icon:active {
+
+background-color: transparent !important;
+    box-shadow: none !important; 
+    border: none !important; 
+    color: inherit !important; 
+}
+
+
+    
 </style>

@@ -99,7 +99,7 @@ h2 {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: rgba(128, 128, 128, 0.3);
+    background-color: rgba(128, 128, 128, 0.8);
     border-radius: 25px; 
     padding: 6px;
     overflow: hidden;

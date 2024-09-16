@@ -7,9 +7,16 @@ const trackName = document.getElementById('track-name');
 const trackArtist = document.getElementById('track-artist');
 
 const tracks = [
+  { name: 'Sweater Weather', artist: 'The Neighbourhood', src: 'music/SweaterWeather.mp3' },
+  { name: 'Call Out My Name', artist: 'The Weeknd', src: 'music/CallOutMyName.mp3' },
+  { name: 'Die For You', artist: 'The Weeknd', src: 'music/DieForYou.mp3' },
+  { name: 'Diet Mountain Dew', artist: 'Lana Del Rey', src: 'music/DietMountainDew.mp3' },
+  { name: 'Lovers Rock', artist: 'Sade', src: 'music/LoversRock.mp3' },
+  { name: 'One Of The Girls', artist: 'The Weeknd, JENNIE, Lily-Rose Depp', src: 'music/OneOfTheGirls.mp3' },
+  { name: 'Reflections', artist: 'The Neighbourhood', src: 'music/Reflections.mp3' },
+  { name: 'Shootout', artist: 'Izzamuzzic & Julien Marchal', src: 'music/Shootout.mp3' },
+  { name: 'Softcore', artist: 'The Neighbourhood', src: 'music/Softcore.mp3' },
   { name: 'Starboy', artist: 'The Weeknd', src: 'music/Starboy.mp3' },
-  { name: 'Shootout', artist: 'Izzamuzzic and Julien Marchal', src: 'music/Shootout.mp3' },
-
   ];
 
 let trackIndex = 0;

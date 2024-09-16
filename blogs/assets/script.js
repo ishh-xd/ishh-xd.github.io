@@ -1,36 +1,43 @@
-// Get the toggle button and the body
-const toggleButton = document.getElementById('theme-toggle');
-const body = document.body;
-const toggleIcon = toggleButton.querySelector('img');
 
-// Apply the theme from localStorage on page load
-function applyTheme(theme) {
-    body.classList.remove('light-mode', 'dark-mode');
-    body.classList.add(theme);
-    toggleIcon.src = theme === 'light-mode'
-        ? 'https://img.icons8.com/ios-glyphs/30/000000/moon-symbol.png'
-        : 'https://img.icons8.com/ios-glyphs/30/ffffff/sun--v1.png';
+const timeElement = document.getElementById("time");
+
+function updateTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    timeElement.innerHTML = `${hours}:${minutes}`;
+}
+setInterval(updateTime, 1000);
+updateTime(); 
+
+const bt = document.getElementById('battery');
+function updateBatteryStatus(battery) {
+  bt.innerHTML = `${Math.floor(battery.level * 100)}%`; 
+  if (battery.charging) {
+    bt.innerHTML += ' (Charging)'; 
+  }
+}
+function batteryUpdate() {
+  navigator.getBattery().then(battery => {
+    updateBatteryStatus(battery); 
+    battery.addEventListener('levelchange', () => updateBatteryStatus(battery)); 
+    battery.addEventListener('chargingchange', () => updateBatteryStatus(battery)); 
+  }); 
+}
+document.addEventListener('DOMContentLoaded', batteryUpdate);
+
+function updateDateTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+
+    const timeString = `${hours}:${minutes}`;
+    document.querySelector('.current-time').textContent = timeString;
+
+    const options = { weekday: 'long', day: '2-digit', month: '2-digit' };
+    const dateString = now.toLocaleDateString('en-GB', options).replace(/,/g, '');
+    document.querySelector('.current-date').textContent = dateString;
 }
 
-// Check localStorage for the preferred theme and apply it
-const savedTheme = localStorage.getItem('theme') || 'dark-mode'; // Default to dark mode if no theme is saved
-applyTheme(savedTheme);
-
-// Debounce function to prevent rapid multiple toggles
-function debounce(func, delay) {
-    let timeout;
-    return function () {
-        clearTimeout(timeout);
-        timeout = setTimeout(func, delay);
-    };
-}
-
-// Toggle between light and dark mode
-const toggleTheme = debounce(() => {
-    const currentTheme = body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
-    const newTheme = currentTheme === 'dark-mode' ? 'light-mode' : 'dark-mode';
-    applyTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-}, 300); // 300ms delay to debounce
-
-toggleButton.addEventListener('click', toggleTheme);
+setInterval(updateDateTime, 1000);
+updateDateTime();

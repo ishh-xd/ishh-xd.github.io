@@ -63,3 +63,34 @@ audio.addEventListener('timeupdate', updateProgressBar);
 
 // Load the first track initially
 loadTrack(trackIndex);
+
+
+
+
+// Time Battery 
+
+const timeElement = document.getElementById("time");
+
+function updateTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    timeElement.innerHTML = `${hours}:${minutes}`;
+}
+setInterval(updateTime, 1000);
+updateTime(); 
+
+const bt = document.getElementById('battery');  
+function updateBatteryStatus(battery) {  
+  bt.innerHTML = `${Math.floor(battery.level * 100)}%`; 
+  if (battery.charging) {    
+    bt.innerHTML += ' (Charging)';  
+  }    }  
+function batteryUpdate() {   
+  navigator.getBattery().then(battery => {     
+    updateBatteryStatus(battery);    
+    battery.addEventListener('levelchange', () => updateBatteryStatus(battery));      
+    battery.addEventListener('chargingchange', () => updateBatteryStatus(battery));    
+  });   
+}    
+document.addEventListener('DOMContentLoaded', batteryUpdate);

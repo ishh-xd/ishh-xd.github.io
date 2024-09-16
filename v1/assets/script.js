@@ -67,7 +67,7 @@ playBtn.addEventListener('click', togglePlayPause);
 nextBtn.addEventListener('click', nextTrack);
 prevBtn.addEventListener('click', prevTrack);
 audio.addEventListener('timeupdate', updateProgressBar);
-
+audio.addEventListener('ended', nextTrack); // (Play Next)
 // Load the first track initially
 loadTrack(trackIndex);
 

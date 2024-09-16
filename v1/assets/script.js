@@ -94,3 +94,22 @@ function batteryUpdate() {  
   });   
 }    
 document.addEventListener('DOMContentLoaded', batteryUpdate);
+
+
+
+function updateDateTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+
+    const timeString = `${hours}:${minutes}`;
+    document.querySelector('.current-time').textContent = timeString;
+
+    const options = { weekday: 'long', day: '2-digit', month: '2-digit' };
+    const dateString = now.toLocaleDateString('en-GB', options).replace(/,/g, '');
+    document.querySelector('.current-date').textContent = dateString;
+}
+
+
+setInterval(updateDateTime, 1000);
+updateDateTime(); 

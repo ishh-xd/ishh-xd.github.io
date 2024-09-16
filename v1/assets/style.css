@@ -70,25 +70,7 @@ span.hljs-keyword2{
     color: #ab9df2; /* Soft purple for other keywords */
 }
 
-/* Sticky Navbar */
-.navbar {
-    position: sticky;
-    top: 0;
-    background: rgba(44, 44, 46, 0.9); /* Matching dark background for navbar */
-    padding: 15px;
-    text-align: center;
-    font-family: 'Poppins', sans-serif; /* Using Poppins for a cool font look */
-    font-size: 24px;
-    font-weight: 600;
-    color: #fff;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle bottom border */
-    z-index: 1000; /* Ensures the navbar stays on top */
-}
 
-/* Navbar text styling */
-.navbar h1 {
-    margin: 0;
-}
 
 @media (min-width: 768px) {
     pre {
@@ -253,3 +235,38 @@ span.hljs-keyword2{
     font-size: 14px; /* Adjust icon size accordingly */
   }
 }
+
+
+/* Status Bar */
+.top-bar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    color: white;
+    padding: 5px 0px;
+    font-family: 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+#time {
+    font-size: 16px; /* Slightly larger font size for the time */
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Increase spacing between icons */
+}
+
+.icons i {
+    font-size: 15px; /* Increase icon size */
+    color: white; /* Change icon color to white */
+}
+
+#battery {
+    font-size: 15px; /* Slightly larger font size for battery percentage */
+}  

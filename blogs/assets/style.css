@@ -164,13 +164,15 @@ h2 {
     }
 }
     
-/* Status Bar */
+/* Status Bar
+linear-gradient(#1c1c1c, #333333)
+*/
 .top-bar {
     position: sticky;
     top: 0;
     width: 100%;
-    background: linear-gradient(#1c1c1c, #333333);
-    
+    background: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
     color: white;
     padding: 5px 0px;
     font-family: 'Helvetica Neue', sans-serif;
@@ -178,8 +180,7 @@ h2 {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
-}
+    }
 
 #time {
     font-size: 16px; /* Slightly larger font size for the time */

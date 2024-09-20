@@ -1,7 +1,7 @@
 # Ishh
 Live preview: https://ishh.is-a.dev
 
-(This site is literally being updated after half a year. Lazy me.)
+(Lazy me updated everything after half a year. 🤡)
 
 ## Personal Webpage 
 ![ishh.is-a.dev](https://us-east-1.tixte.net/uploads/ishh.likes.cash/Ishh.jpeg "Thumbnail")
@@ -15,6 +15,8 @@ Live preview: https://ishh.is-a.dev
 - Deprecation Page
 - TXT Notes
 
+### Screenshots
+_Move to "**.screenshots**" folder to observe site views._
 
 # Copyright
 I have copied few things online, used AI to fix bugs and pasted few things from other websites. If something is owned by you please email "ishh-xd@proton.me" for removal.

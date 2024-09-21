@@ -37,6 +37,18 @@
     box-sizing: border-box;
 }
 
+a { 
+    color: inherit;
+    cursor:pointer;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: underline !important;
+}
+ a:hover, a:focus, a:active {
+     -webkit-tap-highlight-color: transparent;
+     text-decoration: underline overline;
+      color: inherit;
+ }
+
 .cringeFont {
    font-family: 'Ishh Cringe' !important;
     word-spacing: 7px;

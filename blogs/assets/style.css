@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Ishh Cringe';
+    src: url('https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/main/blogs/assets/Ishh.otf') format('otf')
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* Root Variables */
 :root {
@@ -30,6 +37,9 @@
     box-sizing: border-box;
 }
 
+.cringeFont {
+   font-family: 'Ishh Cringe', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
 body{
     padding: 10px;
 }

@@ -1,10 +1,10 @@
+
 @font-face {
     font-family: 'Ishh Cringe';
-    src: url('https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/main/blogs/assets/Ishh.otf') format('otf');
-    font-weight: normal;
-    font-style: normal;
+    src: url('https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/main/blogs/assets/Ishh.woff') format('woff'),
+         url('https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/main/blogs/assets/Ishh.ttf') format('truetype'),
+         url('https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/main/blogs/assets/Ishh.otf') format('opentype');
 }
-
 
 /* Root Variables */
 :root {
@@ -38,7 +38,7 @@
 }
 
 .cringeFont {
-   font-family: 'Ishh Cringe', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; 
+   font-family: 'Ishh Cringe' !important;
 }
 body{
     padding: 10px;

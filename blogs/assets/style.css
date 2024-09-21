@@ -39,6 +39,7 @@
 
 .cringeFont {
    font-family: 'Ishh Cringe' !important;
+    word-spacing: 7px;
 }
 body{
     padding: 10px;

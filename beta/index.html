@@ -5,16 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snowfall Effect</title>
   <style>
+    /* Fullscreen gradient background */
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); /* Dark iPhone-like gradient */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Snowflake styling */
     .snowflake {
       --size: 1vw;
       width: var(--size);
       height: var(--size);
-      background: white;
+      background: rgba(255, 255, 255, 0.85); /* Bright white and more opaque */
       border-radius: 50%;
       position: absolute;
       top: -5vh;
+      opacity: 0.9;
     }
 
+    /* Snowfall animation */
     @keyframes snowfall {
       0% {
         transform: translate3d(var(--left-ini), 0, 0);
@@ -24,39 +40,36 @@
       }
     }
 
+    /* Small blur every 6 snowflakes */
     .snowflake:nth-child(6n) {
       filter: blur(1px);
     }
 
+    /* Individual snowflake animations */
     .snowflake:nth-child(1) {
-      --size: 0.2vw;
+      --size: 0.3vw;
       --left-ini: -6vw;
       --left-end: -6vw;
       left: 41vw;
       animation: snowfall 10s linear infinite;
       animation-delay: -6s;
     }
-
-    .snowflake:nth-child(2) {
-      --size: 0.4vw;
-      --left-ini: 2vw;
-      --left-end: -5vw;
-      left: 96vw;
-      animation: snowfall 11s linear infinite;
-      animation-delay: -5s;
-    }
-
-    /* Add more snowflake definitions as needed */
+    
+    /* Add additional snowflakes as per your earlier CSS code */
   </style>
 </head>
 <body>
-  <!-- Snowflake elements -->
+  <!-- Snowflakes -->
   <div class="snowflake"></div>
   <div class="snowflake"></div>
   <div class="snowflake"></div>
   <div class="snowflake"></div>
   <div class="snowflake"></div>
   <div class="snowflake"></div>
-  <!-- Add more <div class="snowflake"></div> for additional snowflakes -->
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <!-- Add more divs if needed -->
 </body>
 </html>

@@ -1,15 +1,5 @@
 
-    body {
-      margin: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); /* Dark gradient */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
+    
 
     /* Snowflake styling */
     .snowflake {

@@ -1,10 +1,8 @@
 # Ishh
 Live preview: https://ishh.is-a.dev
 
-(Lazy me updated everything after half a year. 🤡)
-
 ## Personal Webpage 
-![ishh.is-a.dev](https://us-east-1.tixte.net/uploads/ishh.likes.cash/Ishh.jpeg "Thumbnail")
+<center><img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=ishh.is-a.dev&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=gradient" /></center>
 
 ### Features
 - Aesthetic Dark Theme

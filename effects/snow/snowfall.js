@@ -1,3 +1,4 @@
+
 const numberOfSnowflakes = 100; // Total number of snowflakes
 
 for (let i = 0; i < numberOfSnowflakes; i++) {
@@ -19,3 +20,20 @@ for (let i = 0; i < numberOfSnowflakes; i++) {
 
   document.body.appendChild(snowflake);
 }
+
+// Add CSS animation for wind effect
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes wind {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(50vh) translateX(var(--wind-effect));
+    }
+    100% {
+      transform: translateY(100vh) translateX(var(--wind-effect));
+    }
+  }
+`;
+document.head.appendChild(style);

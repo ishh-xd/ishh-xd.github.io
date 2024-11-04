@@ -8,7 +8,7 @@
       height: 0.4vw;
       background: rgba(255, 255, 255, 0.85); /* Bright white with opacity */
       border-radius: 50%;
-      top: -5vh; /* Start above the viewport */
+      top: -1vh; /* Start above the viewport */
       opacity: 0.9;
     }
 

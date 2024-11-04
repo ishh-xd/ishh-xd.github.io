@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snowfall Effect</title>
+  <title>Snowfall Effect with Wind</title>
   <style>
     /* Fullscreen gradient background */
     body {
@@ -20,10 +20,10 @@
 
     /* Snowflake styling */
     .snowflake {
-      --size: 0.5vw;
+      --size: 0.4vw;
       width: var(--size);
       height: var(--size);
-      background: rgba(255, 255, 255, 0.85); /* Bright white and more opaque */
+      background: rgba(255, 255, 255, 0.85); /* Bright white with opacity */
       border-radius: 50%;
       position: absolute;
       top: -10vh;
@@ -31,80 +31,55 @@
       animation: snowfall 10s linear infinite;
     }
 
-    /* Snowfall animation */
+    /* Snowfall animation with wind effect */
     @keyframes snowfall {
       0% {
-        transform: translateY(-10vh);
+        transform: translateX(0) translateY(-10vh) rotate(0deg);
+      }
+      50% {
+        transform: translateX(10vw) translateY(50vh) rotate(180deg);
       }
       100% {
-        transform: translateY(110vh);
+        transform: translateX(-10vw) translateY(110vh) rotate(360deg);
       }
     }
 
-    /* Positioning and animation delay for each snowflake */
-    .snowflake:nth-child(1) {
-      left: 10vw;
-      animation-delay: 0s;
-      animation-duration: 8s;
-    }
-
-    .snowflake:nth-child(2) {
-      left: 20vw;
-      animation-delay: 2s;
-      animation-duration: 9s;
-    }
-
-    .snowflake:nth-child(3) {
-      left: 30vw;
-      animation-delay: 1s;
-      animation-duration: 10s;
-    }
-
-    .snowflake:nth-child(4) {
-      left: 40vw;
-      animation-delay: 3s;
-      animation-duration: 8.5s;
-    }
-
-    .snowflake:nth-child(5) {
-      left: 50vw;
-      animation-delay: 0.5s;
-      animation-duration: 9.5s;
-    }
-
-    .snowflake:nth-child(6) {
-      left: 60vw;
-      animation-delay: 4s;
-      animation-duration: 10s;
-    }
-
-    .snowflake:nth-child(7) {
-      left: 70vw;
-      animation-delay: 2.5s;
-      animation-duration: 8s;
-    }
-
-    .snowflake:nth-child(8) {
-      left: 80vw;
-      animation-delay: 1.5s;
-      animation-duration: 9s;
-    }
-
-    .snowflake:nth-child(9) {
-      left: 90vw;
-      animation-delay: 3.5s;
-      animation-duration: 10s;
-    }
-
-    .snowflake:nth-child(10) {
-      left: 95vw;
-      animation-delay: 2s;
-      animation-duration: 8.5s;
-    }
+    /* Positioning, animation delay, and duration for each snowflake */
+    .snowflake:nth-child(1) { left: 5vw; animation-delay: 0s; animation-duration: 8s; }
+    .snowflake:nth-child(2) { left: 15vw; animation-delay: 1s; animation-duration: 9s; }
+    .snowflake:nth-child(3) { left: 25vw; animation-delay: 2s; animation-duration: 10s; }
+    .snowflake:nth-child(4) { left: 35vw; animation-delay: 3s; animation-duration: 8.5s; }
+    .snowflake:nth-child(5) { left: 45vw; animation-delay: 0.5s; animation-duration: 9.5s; }
+    .snowflake:nth-child(6) { left: 55vw; animation-delay: 2.5s; animation-duration: 10s; }
+    .snowflake:nth-child(7) { left: 65vw; animation-delay: 1.5s; animation-duration: 8s; }
+    .snowflake:nth-child(8) { left: 75vw; animation-delay: 4s; animation-duration: 9s; }
+    .snowflake:nth-child(9) { left: 85vw; animation-delay: 3.5s; animation-duration: 10s; }
+    .snowflake:nth-child(10) { left: 95vw; animation-delay: 2s; animation-duration: 8.5s; }
+    /* Additional snowflakes for continuous effect */
+    .snowflake:nth-child(11) { left: 10vw; animation-delay: 0.5s; animation-duration: 9s; }
+    .snowflake:nth-child(12) { left: 20vw; animation-delay: 1.5s; animation-duration: 8s; }
+    .snowflake:nth-child(13) { left: 30vw; animation-delay: 2.5s; animation-duration: 9.5s; }
+    .snowflake:nth-child(14) { left: 40vw; animation-delay: 3.5s; animation-duration: 8.5s; }
+    .snowflake:nth-child(15) { left: 50vw; animation-delay: 4.5s; animation-duration: 10s; }
+    .snowflake:nth-child(16) { left: 60vw; animation-delay: 1s; animation-duration: 8s; }
+    .snowflake:nth-child(17) { left: 70vw; animation-delay: 3s; animation-duration: 9s; }
+    .snowflake:nth-child(18) { left: 80vw; animation-delay: 0.3s; animation-duration: 10s; }
+    .snowflake:nth-child(19) { left: 90vw; animation-delay: 2.3s; animation-duration: 8.5s; }
+    .snowflake:nth-child(20) { left: 100vw; animation-delay: 4.3s; animation-duration: 9.5s; }
   </style>
 </head>
 <body>
   <!-- Multiple snowflakes -->
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
   <div class="snowflake"></div>
   <div class="snowflake"></div>
   <div class="snowflake"></div>

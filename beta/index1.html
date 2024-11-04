@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snowfall Effect with Wind</title>
+  <style>
+    /* Fullscreen gradient background */
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); /* Dark gradient */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Snowflake styling */
+    .snowflake {
+      position: absolute;
+      width: 0.4vw;
+      height: 0.4vw;
+      background: rgba(255, 255, 255, 0.85); /* Bright white with opacity */
+      border-radius: 50%;
+      top: -5vh; /* Start above the viewport */
+      opacity: 0.9;
+    }
+
+    /* Keyframes for snowfall animation */
+    @keyframes fall {
+      0% {
+        transform: translateY(0) translateX(0);
+      }
+      50% {
+        transform: translateY(50vh) translateX(0);
+      }
+      100% {
+        transform: translateY(100vh) translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const numberOfSnowflakes = 100; // Total number of snowflakes
+
+    for (let i = 0; i < numberOfSnowflakes; i++) {
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+
+      // Randomize starting position
+      const randomLeft = Math.random() * 100; // 0 to 100vw
+      snowflake.style.left = `${randomLeft}vw`;
+
+      // Randomize animation duration and delay
+      const duration = 8 + Math.random() * 4; // Between 8s to 12s
+      const delay = Math.random() * 4; // Up to 4 seconds delay
+      snowflake.style.animation = `fall ${duration}s linear ${delay}s infinite`;
+
+      // Add wind effect by adjusting the keyframe at 50% and 100%
+      snowflake.style.setProperty('--wind-effect', `${Math.random() * 20 - 10}vw`);
+      snowflake.style.animation += `, wind ${duration}s linear ${delay}s infinite`;
+
+      document.body.appendChild(snowflake);
+    }
+
+    // Add CSS animation for wind effect
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes wind {
+        0% {
+          transform: translateY(0) translateX(0);
+        }
+        50% {
+          transform: translateY(50vh) translateX(var(--wind-effect));
+        }
+        100% {
+          transform: translateY(100vh) translateX(var(--wind-effect));
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>

@@ -1,45 +1,37 @@
+
     body {
       margin: 0;
       width: 100vw;
       height: 100vh;
-      overflow: hidden !important;
-      background: linear-gradient(145deg, #0f2027, #203a43, #2c5364) !important;
-      position: relative !important;
+      overflow: hidden;
+      background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); /* Dark gradient */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
 
-/* Snowflake styling */
-.snowflake {
-  position: absolute;
-  width: 0.4vw;
-  height: 0.4vw;
-  background: rgba(255, 255, 255, 0.85); /* Bright white with opacity */
-  border-radius: 50%;
-  top: -5vh; /* Start above the viewport */
-  opacity: 0.9;
-}
+    /* Snowflake styling */
+    .snowflake {
+      position: absolute;
+      width: 0.4vw;
+      height: 0.4vw;
+      background: rgba(255, 255, 255, 0.85); /* Bright white with opacity */
+      border-radius: 50%;
+      top: -5vh; /* Start above the viewport */
+      opacity: 0.9;
+    }
 
-/* Keyframes for snowfall animation */
-@keyframes fall {
-  0% {
-    transform: translateY(0) translateX(0);
-  }
-  50% {
-    transform: translateY(50vh) translateX(var(--wind-effect));
-  }
-  100% {
-    transform: translateY(100vh) translateX(var(--wind-effect));
-  }
-}
-
-/* Wind animation */
-@keyframes wind {
-  0% {
-    transform: translateY(0) translateX(0);
-  }
-  50% {
-    transform: translateY(50vh) translateX(var(--wind-effect));
-  }
-  100% {
-    transform: translateY(100vh) translateX(var(--wind-effect));
-  }
-}
+    /* Keyframes for snowfall animation */
+    @keyframes fall {
+      0% {
+        transform: translateY(0) translateX(0);
+      }
+      50% {
+        transform: translateY(50vh) translateX(0);
+      }
+      100% {
+        transform: translateY(100vh) translateX(0);
+      }
+    }
+  

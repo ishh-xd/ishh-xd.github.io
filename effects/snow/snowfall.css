@@ -1,4 +1,11 @@
-
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden !important;
+      background: linear-gradient(145deg, #0f2027, #203a43, #2c5364) !important;
+      position: relative !important;
+    }
 
 /* Snowflake styling */
 .snowflake {

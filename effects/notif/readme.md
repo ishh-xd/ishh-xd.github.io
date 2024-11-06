@@ -6,7 +6,7 @@ src="https://ishh.is-a.dev/effects/notif/notif.js">
 </script>
 
 <custom-notif 
-icon="https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/refs/heads/main/effects/notif/eg_icon.png" 
+icon="https://ishh.is-a.dev/effects/notif/eg_icon.png" 
     app-name="WeatherApp" 
     title="Weather Update" 
     time="54 mins ago">

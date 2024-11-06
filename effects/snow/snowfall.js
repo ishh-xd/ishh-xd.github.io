@@ -3,7 +3,7 @@
         constructor() {
             super();
 
-            // Create a shadow DOM
+            // Attach a shadow DOM to the custom element
             const shadow = this.attachShadow({ mode: 'open' });
 
             // Function to create and animate snowflakes
@@ -26,7 +26,7 @@
                     // Set wind effect variable
                     snowflake.style.setProperty('--wind-effect', `${Math.random() * 20 - 10}vw`);
 
-                    document.body.appendChild(snowflake);
+                    shadow.appendChild(snowflake); // Append snowflake to shadow DOM
                 }
 
                 // Add CSS animation for wind effect if it hasn't been added yet
@@ -77,8 +77,8 @@
                         }
                     }
                 `;
-                shadow.appendChild(style);
-            }
+                shadow.appendChild(style); // Append style to shadow DOM
+            };
 
             // Call the function to create snowflakes when the custom element is connected
             this.connectedCallback = () => {

@@ -8,7 +8,8 @@ Live preview: https://ishh.is-a.dev
 - Aesthetic Dark Theme
 - Blogs System
 - About Me (Codeblock: JavaScript)
-- Music Player 
+- Music Player
+- Different easy to add effects.
 - Homepage '/' is redirect system. 
 - Deprecation Page
 - TXT Notes

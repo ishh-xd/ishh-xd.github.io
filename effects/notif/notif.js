@@ -1,4 +1,3 @@
-
 class CustomNotif extends HTMLElement {
     constructor() {
         super();
@@ -7,68 +6,62 @@ class CustomNotif extends HTMLElement {
         const shadow = this.attachShadow({ mode: 'open' });
 
         // Create the container
-        const container = document.createElement('div');
-        container.classList.add('container');
+        this.container = document.createElement('div');
+        this.container.classList.add('container');
 
         // Close button (red dot) in the top-right corner
-        const closeButton = document.createElement('span');
-        closeButton.classList.add('close-button-dot', 'red');
-        closeButton.onclick = () => this.hideNotification();
-        container.appendChild(closeButton);
+        this.closeButton = document.createElement('span');
+        this.closeButton.classList.add('close-button-dot', 'red');
+        this.closeButton.onclick = () => this.hideNotification();
+        this.container.appendChild(this.closeButton);
 
         // Create the header
-        const header = document.createElement('div');
-        header.classList.add('header');
+        this.header = document.createElement('div');
+        this.header.classList.add('header');
 
         // App icon and app name container
-        const appInfo = document.createElement('div');
-        appInfo.classList.add('app-info');
+        this.appInfo = document.createElement('div');
+        this.appInfo.classList.add('app-info');
 
         // App icon
-        const img = document.createElement('img');
-        img.src = this.getAttribute('icon') || "https://via.placeholder.com/30";
-        img.alt = "App Icon";
+        this.img = document.createElement('img');
 
         // App name
-        const appName = document.createElement('div');
-        appName.classList.add('app-name');
-        appName.textContent = this.getAttribute('app-name') || 'APP NAME';
+        this.appName = document.createElement('div');
+        this.appName.classList.add('app-name');
 
         // Append icon and app name to appInfo
-        appInfo.appendChild(img);
-        appInfo.appendChild(appName);
+        this.appInfo.appendChild(this.img);
+        this.appInfo.appendChild(this.appName);
 
         // Container for title and time below app name and icon
-        const titleTimeContainer = document.createElement('div');
-        titleTimeContainer.classList.add('title-time-container');
+        this.titleTimeContainer = document.createElement('div');
+        this.titleTimeContainer.classList.add('title-time-container');
 
         // Title on the left
-        const title = document.createElement('div');
-        title.classList.add('title');
-        title.textContent = this.getAttribute('title') || 'Default Title';
+        this.title = document.createElement('div');
+        this.title.classList.add('title');
 
         // Time on the right
-        const time = document.createElement('div');
-        time.classList.add('time');
-        time.textContent = this.getAttribute('time') || 'Now';
+        this.time = document.createElement('div');
+        this.time.classList.add('time');
 
         // Append title and time to the title-time container
-        titleTimeContainer.appendChild(title);
-        titleTimeContainer.appendChild(time);
+        this.titleTimeContainer.appendChild(this.title);
+        this.titleTimeContainer.appendChild(this.time);
 
         // Append app info and title-time container to header
-        header.appendChild(appInfo);
-        header.appendChild(titleTimeContainer);
+        this.header.appendChild(this.appInfo);
+        this.header.appendChild(this.titleTimeContainer);
 
-        container.appendChild(header);
+        this.container.appendChild(this.header);
 
         // Notification text content
-        const textContent = document.createElement('div');
-        textContent.classList.add('text');
-        textContent.textContent = this.innerHTML || 'Default notification content';
+        this.textContentDiv = document.createElement('div');
+        this.textContentDiv.classList.add('text');
 
-        container.appendChild(textContent);
-        shadow.appendChild(container);
+        this.container.appendChild(this.textContentDiv);
+        shadow.appendChild(this.container);
 
         // Add styles
         const style = document.createElement('style');
@@ -175,6 +168,18 @@ class CustomNotif extends HTMLElement {
     }
 
     connectedCallback() {
+        // Set the attributes after the element is connected to the DOM
+        this.img.src = this.getAttribute('icon') || "https://via.placeholder.com/30";
+        this.img.alt = "App Icon";
+
+        this.appName.textContent = this.getAttribute('app-name') || 'App Name';
+        this.title.textContent = this.getAttribute('title') || 'Notification Title';
+        this.time.textContent = this.getAttribute('time') || '3 hours ago';
+
+        // Set inner text content or fallback to default text
+        this.textContentDiv.textContent = this.getAttribute('content') || 'This is the default notification content.';
+
+        // Show notification with a delay
         setTimeout(() => this.showNotification(), 500);
     }
 

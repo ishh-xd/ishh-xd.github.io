@@ -1,4 +1,5 @@
 ### Custom Notification
+**Live Preview**: https://ishh.is-a.dev/effects/snow/example
 ```html
 <custom-notif 
     icon="https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/refs/heads/main/effects/notif/eg_icon.png" 
@@ -8,3 +9,4 @@
     It's going to rain today. Don't forget your umbrella!
 </custom-notif>
 ```
+`Designed by Ishh along with Artificial Intelligence.`

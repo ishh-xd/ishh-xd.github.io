@@ -1,5 +1,5 @@
 ### Custom Notification
-**Live Preview**: https://ishh.is-a.dev/effects/snow/example
+**Live Preview**: https://ishh.is-a.dev/effects/notif/example
 ```html
 <script
 src="https://ishh.is-a.dev/effects/notif/notif.js">

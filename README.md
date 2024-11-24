@@ -18,5 +18,5 @@ Live preview: https://ishh.is-a.dev
 _Move to "**.screenshots**" folder to observe site views._
 
 # Copyright
-I have copied few things online, used AI to fix bugs and pasted few things from other websites. If something is owned by you please email "ishh-xd@proton.me" for removal.
+I have copied few things online, used AI to fix bugs and pasted few things from other websites. If something is owned by you please email "ishh69@yahoo.com" for removal.
 (Coded and designed by me, so copying this repo is strictly not allowed.)

@@ -40,35 +40,61 @@ src="https://ishh.is-a.dev/effects/notif/notif.js">
 </custom-notif>
 
 <script>
-  (async () => {
+  document.addEventListener("DOMContentLoaded", async () => {
     const weatherElement = document.getElementById('weather-report');
     
-    // Ensure the element exists
     if (!weatherElement) {
       console.error("Element with ID 'weather-report' not found.");
       return;
     }
 
-    // Update the text to confirm interaction
-    weatherElement.innerText = "Fetching weather data...";
+    // Show loading message immediately
+    weatherElement.innerText = "Loading...";
 
     const API = `https://wttr.in/${''}?0AFT`;
-    try {
-      const res = await fetch(API);
 
-      // Check if the response is successful
+    // Helper function to fetch with a 3-second timeout
+    const fetchWithTimeout = (url, timeout = 3000) => {
+      return Promise.race([
+        fetch(url),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error("Request timed out")), timeout)
+        ),
+      ]);
+    };
+
+    try {
+      console.log("Sending request to API:", API);
+
+      const res = await fetchWithTimeout(API, 3000); // 3-second timeout
+
+      // Check response status
       if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
+        console.error(`API responded with status ${res.status}`);
+        weatherElement.innerText = `Error: ${res.statusText}`;
+        return;
       }
 
+      console.log("Response received from API:", res);
+
       const txt = await res.text();
-      weatherElement.innerText = txt;
+      console.log("Weather data:", txt);
+
+      // Update DOM with weather data
+      weatherElement.innerText = txt.trim();
     } catch (error) {
-      console.error("Error fetching weather data:", error);
-      weatherElement.innerText = "Failed to load weather data.";
+      console.error("Error during fetch operation:", error);
+
+      // Handle timeout or other errors
+      weatherElement.innerText =
+        error.message === "Request timed out"
+          ? "The request took too long. Please try again later."
+          : "Failed to load weather data.";
     }
-  })();
+  });
 </script>
+    
+      
 
 
 

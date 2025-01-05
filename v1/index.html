@@ -22,31 +22,55 @@
 
     <!-- Snow Effects --->
 
-<script
+
+    
+    <script
 src="https://ishh.is-a.dev/effects/notif/notif.js">
 </script>
 
+
+
+    
 <custom-notif 
   icon="https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/refs/heads/main/blogs/assets/images/ishh_pfp.png" 
   app-name="Weather Reports" 
   title="Welcome! 👀" 
   time="1m">
-    <span id="weather-report-lol">Loading...</span>
+    <span id="weather-report">Loading...</span>
 </custom-notif>
 
 <script>
   (async () => {
+    const weatherElement = document.getElementById('weather-report');
+    
+    // Ensure the element exists
+    if (!weatherElement) {
+      console.error("Element with ID 'weather-report' not found.");
+      return;
+    }
+
+    // Update the text to confirm interaction
+    weatherElement.innerText = "Fetching weather data...";
+
     const API = `https://wttr.in/${''}?0AFT`;
     try {
       const res = await fetch(API);
+
+      // Check if the response is successful
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+
       const txt = await res.text();
-      document.getElementById('weather-report').innerText = txt;
+      weatherElement.innerText = txt;
     } catch (error) {
       console.error("Error fetching weather data:", error);
-      document.getElementById('weather-report-lol').innerText = "Failed to load weather data.";
+      weatherElement.innerText = "Failed to load weather data.";
     }
   })();
 </script>
+
+
 
     
     

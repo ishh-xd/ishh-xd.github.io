@@ -27,14 +27,26 @@ src="https://ishh.is-a.dev/effects/notif/notif.js">
 </script>
 
 <custom-notif 
-icon="https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/refs/heads/main/blogs/assets/images/ishh_pfp.png" 
-    app-name="Ishh" 
-    title="Welcome! 👀" 
-    time="1m">
-    Hello there, I'm <strong>Ishh</strong> and this is my responsive and smart website.<br>
-    I know you can observe it, but I really wanted to knock this off your head. UwU <br>
-    (Send me emails, I reply to all of them.)
+  icon="https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/refs/heads/main/blogs/assets/images/ishh_pfp.png" 
+  app-name="Weather Reports" 
+  title="Welcome! 👀" 
+  time="1m">
+    <span id="weather-report-lol">Loading...</span>
 </custom-notif>
+
+<script>
+  (async () => {
+    const API = `https://wttr.in/${''}?0AFT`;
+    try {
+      const res = await fetch(API);
+      const txt = await res.text();
+      document.getElementById('weather-report').innerText = txt;
+    } catch (error) {
+      console.error("Error fetching weather data:", error);
+      document.getElementById('weather-report-lol').innerText = "Failed to load weather data.";
+    }
+  })();
+</script>
 
     
     

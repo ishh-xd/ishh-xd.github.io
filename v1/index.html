@@ -28,7 +28,37 @@
 src="https://ishh.is-a.dev/effects/notif/notif.js">
 </script>
 
+<custom-notif 
+  icon="https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/refs/heads/main/blogs/assets/images/ishh_pfp.png" 
+  app-name="Weather Reports" 
+  title="Welcome! 👀" 
+  time="1m">
+  <pre id="weatherData">Loading...</pre>
+</custom-notif>
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function updateWeather() {
+        const location = "";  // Optional: specify a location
+        const API = `https://wttr.in/${location}?0AT`;  // Concise weather data
+        fetch(API)
+            .then(response => response.text())
+            .then(text => {
+                // Ensure you're targeting the correct part of the custom-notif tag
+                const notifElement = document.querySelector('custom-notif');
+                const weatherDataElement = notifElement.shadowRoot.querySelector("#weatherData");
+                if (weatherDataElement) {
+                    weatherDataElement.innerText = text; // Update inside the shadow DOM
+                }
+            });
+    }
+
+    // First run to load data
+    updateWeather();
+    setInterval(updateWeather, 5000);  // Update every 60 seconds
+  });
+</script>
 
 
 

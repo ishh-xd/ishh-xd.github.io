@@ -29,7 +29,6 @@ src="https://ishh.is-a.dev/effects/notif/notif.js">
 </script>
 
 
-
 <custom-notif 
   icon="https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/refs/heads/main/blogs/assets/images/ishh_pfp.png" 
   app-name="Weather Reports" 
@@ -39,26 +38,34 @@ src="https://ishh.is-a.dev/effects/notif/notif.js">
 </custom-notif>
 
 <script>
-async function updateData() {
-    try {
-        const location = ""; // Add location if needed
-        const API = `https://wttr.in/${location}?0AT`; // Fetch concise data
-        const res = await fetch(API);
-        const txt = await res.text();
+document.addEventListener("DOMContentLoaded", () => {
+    const weatherDataElement = document.getElementById("weatherData");
 
-        // Update weather data in the HTML
-        const wt = document.getElementById("weatherData");
-        wt.textContent = txt;
-    } catch (error) {
-        console.error("Error fetching weather data:", error);
-        document.getElementById("weatherData").textContent = "Failed to load data.";
+    async function fetchWeatherData() {
+        const location = ""; // Optional: Specify location
+        const API = `https://wttr.in/${location}?0AT`;
+        try {
+            const response = await fetch(API);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const text = await response.text();
+            weatherDataElement.textContent = text; // Update text content
+        } catch (error) {
+            console.error("Error fetching weather data:", error);
+            weatherDataElement.textContent = "Error loading weather data.";
+        }
     }
-}
 
-// Update data every 60 seconds to avoid excessive API calls
-setInterval(updateData, 15000);
-document.addEventListener("DOMContentLoaded", updateData);
+    // Initial load
+    fetchWeatherData();
+
+    // Refresh every 60 seconds
+    setInterval(fetchWeatherData, 60000);
+});
 </script>
+
+<script src="https://ishh.is-a.dev/effects/notif/notif.js"></script>
 
 
 

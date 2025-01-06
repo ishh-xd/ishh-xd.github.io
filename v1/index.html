@@ -36,36 +36,29 @@ src="https://ishh.is-a.dev/effects/notif/notif.js">
   time="1m">
   <pre id="weatherData">Loading...</pre>
 </custom-notif>
-
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const weatherDataElement = document.getElementById("weatherData");
-
-    async function fetchWeatherData() {
-        const location = ""; // Optional: Specify location
+  document.addEventListener("DOMContentLoaded", function () {
+    // Override or reuse the update function from the external script for weather data
+    function updateWeatherData() {
+        const location = "";  // Optional: specify location
         const API = `https://wttr.in/${location}?0AT`;
-        try {
-            const response = await fetch(API);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const text = await response.text();
-            weatherDataElement.textContent = text; // Update text content
-        } catch (error) {
-            console.error("Error fetching weather data:", error);
-            weatherDataElement.textContent = "Error loading weather data.";
-        }
+        fetch(API)
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById("weatherData").textContent = text;
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+                document.getElementById("weatherData").textContent = "Error loading weather data.";
+            });
     }
 
-    // Initial load
-    fetchWeatherData();
-
-    // Refresh every 60 seconds
-    setInterval(fetchWeatherData, 60000);
-});
+    // Call this function to initialize and update every 60 seconds (or modify as needed)
+    updateWeatherData();
+    setInterval(updateWeatherData, 60000);
+  });
 </script>
 
-<script src="https://ishh.is-a.dev/effects/notif/notif.js"></script>
 
 
 

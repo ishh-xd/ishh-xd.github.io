@@ -68,7 +68,28 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
 }
-        
+
+        #textBox {
+    max-width: 100%;
+    overflow-x: auto;  
+    white-space: pre;  
+    word-wrap: normal;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#textBox::-webkit-scrollbar {
+    height: 5px; 
+}
+
+#textBox::-webkit-scrollbar-thumb {
+    background: #555;  
+    border-radius: 10px;
+}
+
+#textBox::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
     </style>
 </head>
 <body>

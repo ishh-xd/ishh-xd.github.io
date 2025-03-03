@@ -6,24 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Share - Ishh API</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background: #222;
-            color: white;
-        }
-        pre {
-            background: #333;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
+        
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #222;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.code-container {
+    width: 90%;
+    max-width: 900px;
+    height: 80vh;
+    background: #282a36;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.code-header {
+    background: #44475a;
+    color: #f8f8f2;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+.copy-btn {
+    background: #6272a4;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    background: #50fa7b;
+}
+
+pre {
+    background: #333;
+    padding: 15px;
+    margin: 0;
+    font-size: 14px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+        
     </style>
 </head>
 <body>
 
+
+<div class="code-container">
+    <div class="code-header">
+        <span>example.txt</span>
+        <button class="copy-btn">Copy</button>
+    </div>
+<pre id="textBox">Fetching...</pre>
+</div>
+
+
     
-    <pre id="textBox">Fetching...</pre>
+    
 
     <script>
        function getQueryParam(param) {

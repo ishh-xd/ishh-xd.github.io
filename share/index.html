@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #222;
+    background: black;
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -48,13 +48,20 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .copy-btn:hover {
     background: #50fa7b;
     color: black;
 }
-
+.copy-btn:active {
+    background-color: transparent !important;
+    box-shadow: none !important; 
+    border: none !important; 
+    color: inherit !important; 
+}
 pre {
     padding: 15px;
     margin: 0;

@@ -141,6 +141,7 @@ pre {
         function hlCode(){
             document.querySelectorAll("pre").forEach((block) => {
                 hljs.highlightElement(block);
+                hljs.lineNumbersBlock(block);
             });
         hljs.initLineNumbersOnLoad(); 
         }

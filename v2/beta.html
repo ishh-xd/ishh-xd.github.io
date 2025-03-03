@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        } 
+        
+
+        /* Tap-to-enter overlay */
+        .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            cursor: pointer;
+        }
+
+        /* Typewriter effect */
+        .enter-text {
+            color: grey;
+            font-size: 18px;
+            font-weight: bold;
+            opacity: 0.7;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid white;
+            width: 0;
+            animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 230px; } /* Adjust based on text length */
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .overlay:hover .enter-text {
+            opacity: 1;
+        }
+
+        /* Tap-to-start text at bottom */
+        .tap-to-start {
+            position: absolute;
+            bottom: 20px;
+            color: white;
+            font-size: 14px;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Icon */
+        .tap-icon {
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Tap-to-enter overlay -->
+    <div id="enter-screen" class="overlay" onclick="enterVault()">
+        <p class="enter-text">Click to enter Ishh's vault.</p>
+        <div class="tap-to-start">
+            <img src="https://ishh.is-a.dev/v2/assets/pointer.png" alt="Icon" class="tap-icon"> Click to start!
+        </div>
+    </div>
+
+    <!-- Main content (untouched) -->
+    <div id="main-content">
+        <h1>Welcome to the Vault</h1>
+        <p>This is the real content.</p>
+    </div>
+
+    <script>
+        function enterVault() {
+            // Enable Full Screen Mode
+            let elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari & Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+
+            // Hide the tap-to-enter screen
+            document.getElementById("enter-screen").style.display = "none";
+        }
+    </script>
+</body>
+</html>

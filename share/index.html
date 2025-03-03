@@ -65,17 +65,20 @@ pre {
     margin: 0;
     font-size: 14px;
     overflow: auto;
-    white-space: pre;
+    white-space: pre-wrap;
     word-wrap: break-word;
 }
 
         #textBox {
     max-width: 100%;
-    overflow-x: auto;  
-    white-space: pre;  
-    word-wrap: normal;
-    padding: 10px;
-    border-radius: 5px;
+    max-height: 300px;  
+    overflow-y: auto;   
+    white-space: pre-wrap;  
+    word-wrap: break-word;  
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 #textBox::-webkit-scrollbar {

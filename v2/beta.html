@@ -73,8 +73,16 @@
 
         /* Icon */
         .tap-icon {
-            width: 16px;
-            height: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        .tap-icon:active {
+    background-color: transparent !important;
+    box-shadow: none !important; 
+    border: none !important; 
+    color: inherit !important; 
         }
     </style>
 </head>
@@ -83,7 +91,7 @@
     <div id="enter-screen" class="overlay" onclick="enterVault()">
         <p class="enter-text">Click to enter Ishh's vault.</p>
         <div class="tap-to-start">
-            <img src="https://ishh.is-a.dev/v2/assets/pointer.png" alt="Icon" class="tap-icon"> Click to start!
+            <img src="https://ishh.is-a.dev/v2/assets/pointer_icon.png" alt="Icon" class="tap-icon"> Click to start!
         </div>
     </div>
 

@@ -12,7 +12,7 @@ Live preview: https://ishh.is-a.dev
 - Different easy to add effects.
 - Homepage '/' is redirect system. 
 - Deprecation Page
-- TXT Notes
+- Sharing System (Code Snippets/Notes)
 
 ### Screenshots
 _Move to "**.screenshots**" folder to observe site views._

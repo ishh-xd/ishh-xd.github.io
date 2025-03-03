@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Share - Ishh API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16-3024.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <style>
         
 
@@ -108,7 +110,14 @@ pre {
                 });
         }
 
-        update();
+        update().then(x=>hlCode());
+        
+        function hlCode(){
+            document.querySelectorAll("pre").forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        
+        }
         
     </script>
 

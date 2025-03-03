@@ -103,6 +103,7 @@ pre {
                     
                     // Display JSON in a readable format
                     document.getElementById("textBox").textContent = text;
+                   hlCode()
                 })
                 .catch(error => {
                     document.getElementById("textBox").textContent = "Error fetching data.";
@@ -110,7 +111,7 @@ pre {
                 });
         }
 
-        update().then(x=>hlCode());
+        update()
         
         function hlCode(){
             document.querySelectorAll("pre").forEach((block) => {

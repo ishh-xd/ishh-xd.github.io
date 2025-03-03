@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather - Ishh API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <pre id="weatherData">Fetching...</pre>
+
+    <script>
+        function updateWeather() {
+            const location = "";  // Change to a city like "Delhi" if needed
+            const API = `https://wttr.in/${location}?0AT`; // Text-based weather
+            
+            fetch(API)
+                .then(response => response.text())
+                .then(text => {
+                    // Convert text to JSON-like format
+                    let lines = text.split("\n").filter(line => line.trim() !== ""); // Remove empty lines
+                    let weatherJSON = {
+                        location: lines[0]?.trim(),
+                        condition: lines[1]?.trim(),
+                        temperature: lines[2]?.trim(),
+                        wind: lines[3]?.trim()
+                    };
+
+                    // Display JSON in a readable format
+                    document.getElementById("weatherData").textContent = JSON.stringify(weatherJSON, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById("weatherData").textContent = "Error fetching weather data.";
+                    console.error(error);
+                });
+        }
+
+        updateWeather();
+        setInterval(updateWeather, 5000);
+    </script>
+
+</body>
+</html>

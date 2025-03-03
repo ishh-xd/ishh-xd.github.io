@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share - Ishh API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <pre id="textBox">Fetching...</pre>
+
+    <script>
+        function update() {
+            const fuckingName = "ishh";  // Change to a city like "Delhi" if needed
+            const API = `https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/refs/heads/main/texts/{fuckingName}.txt`; // Text-based weather
+            
+            fetch(API)
+                .then(response => response.text())
+                .then(text => {
+                    
+                    // Display JSON in a readable format
+                    document.getElementById("textBox").textContent = text;
+                })
+                .catch(error => {
+                    document.getElementById("textBox").textContent = "Error fetching data.";
+                    console.error(error);
+                });
+        }
+
+        update();
+        
+    </script>
+
+</body>
+</html>

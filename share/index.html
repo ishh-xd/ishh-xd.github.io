@@ -103,7 +103,7 @@ pre {
                     
                     // Display JSON in a readable format
                     document.getElementById("textBox").textContent = text;
-                   hlCode()
+                   setTimeout(() => hlCode(), 100);
                 })
                 .catch(error => {
                     document.getElementById("textBox").textContent = "Error fetching data.";
@@ -119,7 +119,7 @@ pre {
             });
         
         }
-        
+        setTimeout(() => hlCode(), 2000);
     </script>
 
 </body>

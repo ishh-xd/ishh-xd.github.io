@@ -28,8 +28,8 @@
     <script>
         function update() {
             const fuckingName = "ishh";  // Change to a city like "Delhi" if needed
-            const API = `https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/refs/heads/main/texts/{fuckingName}.txt`; // Text-based weather
-            
+            const API = `https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/refs/heads/main/texts/${fuckingName}.txt`; // Text-based weather
+          
             fetch(API)
                 .then(response => response.text())
                 .then(text => {

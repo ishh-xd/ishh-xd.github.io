@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vault</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;700&family=IBM+Plex+Mono:wght@400&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -16,6 +18,15 @@
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For older versions of Edge */
         } 
         
 
@@ -86,6 +97,94 @@
     border: none !important; 
     color: inherit !important; 
         }
+
+           .profile-card {
+            width: 320px;
+            min-height: 150px; /* Fixed height */
+            padding: 20px;
+            border-radius: 15px;
+            text-align: left;
+            color: white;
+            background: #080808; /* Dark shade */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover Effect */
+        .profile-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .top-section {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between avatar and name */
+        }
+
+        .avatar {
+            width: 100px;
+            border-radius: 50%;
+            background: black;
+        }
+
+.name {
+    font-size: 20px;
+    
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: #b0b0b0; /* Gray color */
+    background: linear-gradient(90deg, #b0b0b0, #ffffff, #b0b0b0);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 2s infinite linear;
+}
+
+@keyframes shine {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+        .text-container {
+          height: 24px;
+            display: flex;
+            align-items: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+            min-height: 24px; /* Prevents jumping */
+        }
+
+        .description {
+          font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .blinking-cursor {
+            display: inline-block;
+            width: 5px;
+            height: 14px;
+            background: white;
+            margin-left: 2px;
+            vertical-align: bottom;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .pronoun {
+            font-size: 8px;
+            font-family: 'Inter', sans-serif;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -97,11 +196,17 @@
         </div>
     </div>
 
-    <!-- Main content (untouched) -->
-    <div id="main-content">
-        <h1>Welcome to the Vault</h1>
-        <p>This is the real content.</p>
+    <div class="profile-card">
+        <div class="top-section">
+            <img src="https://ishh.is-a.dev/blogs/assets/images/ishh_pfp.png" alt="Avatar" class="avatar">
+            <h1 class="name">Ishh</h1>
+        </div>
+      <br>  <div class="text-container">
+            <p class="description"></p><span class="blinking-cursor"></span>
+        </div>
+        <p class="pronoun">He/Him</p>
     </div>
+
 
     <script>
         function enterVault() {
@@ -120,6 +225,48 @@
             // Hide the tap-to-enter screen
             document.getElementById("enter-screen").style.display = "none";
         }
+
+const descriptions = [
+            "I love programming.",
+            "I like cats.",
+            "I enjoy learning new things."
+        ];
+
+        let index = 0;
+        let charIndex = 0;
+        let typingSpeed = 100;
+        let deletingSpeed = 50;
+        let delayBetween = 2000;
+
+        function typeEffect() {
+            const descriptionElement = document.querySelector(".description");
+
+            if (charIndex < descriptions[index].length) {
+                descriptionElement.textContent += descriptions[index].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeEffect, typingSpeed);
+            } else {
+                setTimeout(deleteEffect, delayBetween);
+            }
+        }
+
+        function deleteEffect() {
+            const descriptionElement = document.querySelector(".description");
+
+            if (charIndex > 0) {
+                descriptionElement.textContent = descriptions[index].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(deleteEffect, deletingSpeed);
+            } else {
+                index = (index + 1) % descriptions.length;
+                setTimeout(typeEffect, 500);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            typeEffect();
+        });
+        
     </script>
 </body>
 </html>

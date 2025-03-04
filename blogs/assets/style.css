@@ -56,6 +56,10 @@ a {
 }
 body{
     padding: 10px;
+    user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none;
 }
 
 /* Default Theme */

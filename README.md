@@ -5,11 +5,11 @@ Live preview: https://ishh.is-a.dev
 <center><img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=ishh.is-a.dev&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=gradient" /></center>
 
 ### Features
-- Aesthetic Dark Theme
+- Aesthetic Dark Themed
 - Blogs System
-- About Me (Codeblock: JavaScript)
-- Music Player
-- Different easy to add effects.
+- About Me (Multiple Versions)
+- Music Player System
+- Versatile easy to add effects. 
 - Homepage '/' is redirect system. 
 - Deprecation Page
 - Sharing System (Code Snippets/Notes)

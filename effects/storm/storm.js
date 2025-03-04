@@ -6,7 +6,6 @@ class ThunderEffect {
 
   init() {
     this.createStyles();
-    this.createLightningOverlay();
   }
 
   createStyles() {
@@ -14,9 +13,9 @@ class ThunderEffect {
     style.innerHTML = `
       @keyframes screen-shake {
         0% { transform: translate(0, 0); }
-        25% { transform: translate(8px, -8px); }
-        50% { transform: translate(-8px, 8px); }
-        75% { transform: translate(8px, 8px); }
+        25% { transform: translate(4px, -4px); }
+        50% { transform: translate(-4px, 4px); }
+        75% { transform: translate(3px, -3px); }
         100% { transform: translate(0, 0); }
       }
 
@@ -25,84 +24,47 @@ class ThunderEffect {
         height: 100%;
         width: 100%;
         overflow: hidden;
+        transition: background 0.3s ease-in-out;
       }
 
       .thunder-shake {
-        animation: screen-shake 0.2s ease-in-out 5;
+        animation: screen-shake 0.4s ease-in-out 3;
       }
 
       .thunder-flash {
-        background: rgba(245, 245, 245, 0.9) !important; /* Slightly grayish white */
-        color: black !important;
-        transition: background 0.1s, opacity 0.1s;
+        background: rgba(255, 255, 255, 0.8) !important;
+        transition: background 0.15s ease-in-out;
       }
 
       .thunder-darken {
-        background: black !important;
-      }
-
-      .lightning-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: radial-gradient(circle, rgba(255,255,255,0.9) 10%, rgba(0,0,0,0.7) 100%);
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.1s;
+        background: rgba(0, 0, 0, 0.6) !important;
       }
     `;
     document.head.appendChild(style);
   }
 
-  createLightningOverlay() {
-    this.lightningOverlay = document.createElement("div");
-    this.lightningOverlay.className = "lightning-overlay";
-    document.body.appendChild(this.lightningOverlay);
-  }
-
   start() {
-    const htmlBody = document.documentElement;
     const body = document.body;
 
-    // Add full-screen shake effect
-    htmlBody.classList.add("thunder-shake");
+    // Add a subtle screen shake effect
+    document.documentElement.classList.add("thunder-shake");
 
-    // Darken the screen before the flash
+    // Darken the screen briefly before the flash
     body.classList.add("thunder-darken");
 
     setTimeout(() => {
       body.classList.remove("thunder-darken");
       body.classList.add("thunder-flash");
-      this.showLightning();
-    }, 200);
+    }, 150);
 
-    setTimeout(() => {
-      body.classList.remove("thunder-flash");
-      this.hideLightning();
-    }, 400);
-
+    setTimeout(() => body.classList.remove("thunder-flash"), 350);
     setTimeout(() => {
       body.classList.add("thunder-flash");
-      this.showLightning();
-    }, 600);
-
-    setTimeout(() => {
-      body.classList.remove("thunder-flash");
-      this.hideLightning();
-    }, 800);
+    }, 500);
+    setTimeout(() => body.classList.remove("thunder-flash"), 700);
 
     // Remove shake effect after animation completes
-    setTimeout(() => htmlBody.classList.remove("thunder-shake"), 1000);
-  }
-
-  showLightning() {
-    this.lightningOverlay.style.opacity = "1";
-  }
-
-  hideLightning() {
-    this.lightningOverlay.style.opacity = "0";
+    setTimeout(() => document.documentElement.classList.remove("thunder-shake"), 900);
   }
 }
 

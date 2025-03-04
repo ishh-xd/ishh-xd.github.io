@@ -117,7 +117,7 @@ pre {
 <div class="code-container">
     <div class="code-header">
         <span id="fname">Loading...</span>
-        <button class="copy-btn">Copy</button>
+        <button onclick="copyIshh()" class="copy-btn">Copy</button>
     </div>
 <pre id="textBox" class="hljs line-numbers">Fetching...</pre>
 </div>
@@ -127,7 +127,16 @@ pre {
     
 
     <script>
-       function getQueryParam(param) {
+      function copyIshh() {
+ var copyText = document.getElementById("textBox").innerText;
+ var input = document.createElement("input");
+ input.value = copyText;
+ document.body.appendChild(input);
+input.select();
+document.execCommand("copy");
+document.body.removeChild(input);
+      }
+        function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
        }

@@ -8,6 +8,10 @@
 }
 
 body {
+    user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none;
     background: linear-gradient(145deg, #0a0a0b, #000000);
     font-family: 'Cascadia Code', monospace; /* Fall back to monospace if Cascadia isn't available */
     font-size: 16px;

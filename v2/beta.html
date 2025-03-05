@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ishh's Vault</title>
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://ishh.is-a.dev/effects/storm/storm.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <!--- Make sure to have a dark body tag. --->
  <script src="https://ishh.is-a.dev/effects/rain/rain.js" defer></script>
@@ -45,20 +46,7 @@
     </div>
 
     <script>
-        function enterVault() {
-            let elem = document.documentElement;
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) {
-                elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) {
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) {
-                elem.msRequestFullscreen();
-            }
-
-            document.getElementById("enter-screen").style.display = "none";
-        }
+        
 
         const descriptions = [
             "I love programming.",
@@ -166,11 +154,29 @@
             playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
         }
 
-        audio.addEventListener('ended', nextTrack);
-
+     audio.addEventListener('ended', nextTrack);
         document.addEventListener('DOMContentLoaded', () => {
             loadTrack(currentTrackIndex);
         });
+        function enterVault() {
+            let elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+
+            document.getElementById("enter-screen").style.display = "none";
+           togglePlayPause()
+            Storm.start()
+            setInterval(()=> Storm.start(), 2000)
+        }
+        
+
     </script>
 </body>
 </html>

@@ -105,15 +105,23 @@
 /* music below */
 
 .music-box {
-            display: flex;
-            align-items: center;
-            background: white;
-            padding: 10px 20px;
-            border-radius: 40px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            gap: 12px;
-            width: fit-content;
-        }
+    display: flex;
+    align-items: center;
+    background: linear-gradient(-45deg, #f0f0f0, #d4d4d4, #ffffff, #1a1a1a);
+    background-size: 400% 400%;
+    animation: gradientMove 5s infinite linear;
+    padding: 10px 20px;
+    border-radius: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    gap: 12px;
+    width: fit-content;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
         .music-disc {
             width: 50px;

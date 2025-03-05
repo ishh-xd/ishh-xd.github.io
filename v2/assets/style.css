@@ -225,6 +225,7 @@ button:hover {
 .avatar {
     width: 100px;
     border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
     background: transparent;
 }
 

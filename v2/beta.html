@@ -172,8 +172,14 @@
             document.getElementById("enter-screen").style.display = "none";
            togglePlayPause()
             Storm.start().catch(console.error)
-            setInterval(() => {
-    Storm.start().catch(console.error);
+            setInterval(async () => {
+    console.log("Attempting to start Storm...");
+    try {
+        await window.Storm.start();
+        console.log("Storm started successfully!");
+    } catch (error) {
+        console.error("Storm failed:", error);
+    }
 }, 5000);
         }
         

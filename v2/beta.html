@@ -102,35 +102,83 @@
     border: none !important; 
     color: inherit !important; 
         }
+/* music below */
 
+.music-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            gap: 12px;
+            width: fit-content;
+        }
 
-.music-disc {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: radial-gradient(circle at center, #5e00ff 10%, black 35%, black 100%);
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5), 0 3px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    animation: spin 3s linear infinite;
-}
+        .music-disc {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, #5e00ff 10%, black 35%, black 100%);
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5), 0 3px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
 
-.music-disc::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 10px;
-    height: 10px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
-}
+        .music-disc::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+        }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
+        .song-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .song-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .song-artist {
+            font-size: 11px;
+            color: gray;
+        }
+
+        .music-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.2s, color 0.2s;
+            color: #444;
+        }
+
+        button:hover {
+            transform: scale(1.15);
+            color: #222;
+        }
+    
+/* music above*/
         
 .profile-card {
     width: 90%;
@@ -244,18 +292,18 @@
     </div>
 
 
-<div class="music-box">
-    <div class="music-disc" id="disc"></div>
-    <div class="song-info">
-        <span class="song-title" id="songTitle">Song Name</span>
-        <span class="song-artist" id="songArtist">Artist Name</span>
+ <div class="music-box">
+        <div class="music-disc" id="disc"></div>
+        <div class="song-info">
+            <span class="song-title" id="songTitle">Song Name</span>
+            <span class="song-artist" id="songArtist">Artist Name</span>
+        </div>
+        <div class="music-controls">
+            <button onclick="prevTrack()"><i class="fa-solid fa-backward"></i></button>
+            <button onclick="togglePlayPause()" id="playPauseBtn"><i class="fa-solid fa-play"></i></button>
+            <button onclick="nextTrack()"><i class="fa-solid fa-forward"></i></button>
+        </div>
     </div>
-    <div class="music-controls">
-        <button onclick="prevTrack()"><i class="fa-solid fa-backward"></i></button>
-        <button onclick="togglePlayPause()" id="playPauseBtn"><i class="fa-solid fa-play"></i></button>
-        <button onclick="nextTrack()"><i class="fa-solid fa-forward"></i></button>
-    </div>
-</div>
     
 
     <script>
@@ -319,40 +367,37 @@ const descriptions = [
 
 
 
+let isPlaying = false; // Initially paused
+        const disc = document.getElementById('disc');
+        const playPauseBtn = document.getElementById('playPauseBtn');
 
-let isPlaying = false; // Start in paused state
-const disc = document.getElementById('disc');
-const playPauseBtn = document.getElementById('playPauseBtn');
+        function togglePlayPause() {
+            if (isPlaying) {
+                stopRotation();
+                playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+            } else {
+                startRotation();
+                playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        }
 
-// Set initial button to "Play" (since music is paused)
-playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-stopRotation(); // Ensure disc is not rotating initially
+        function startRotation() {
+            disc.style.animation = "spin 3s linear infinite";
+        }
 
-function togglePlayPause() {
-    if (isPlaying) {
-        stopRotation();
-        playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-    } else {
-        startRotation();
-        playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-    }
-    isPlaying = !isPlaying;
-}
+        function stopRotation() {
+            disc.style.animation = "none";
+        }
 
-function startRotation() {
-    disc.style.animation = "spin 3s linear infinite";
-}
+        function prevTrack() {
+            alert("Previous track clicked!");
+        }
 
-function stopRotation() {
-    disc.style.animation = "none";
-}
-function prevTrack() {
-    alert("Previous track clicked!");
-}
+        function nextTrack() {
+            alert("Next track clicked!");
+        }
 
-function nextTrack() {
-    alert("Next track clicked!");
-}
         
     </script>
 </body>

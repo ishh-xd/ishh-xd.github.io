@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ishh's Vault</title>
     <style>
@@ -75,7 +76,7 @@
         /* Tap-to-start text at bottom */
         .tap-to-start {
             position: absolute;
-            bottom: 20px;
+            bottom: 40px;
             color: white;
             font-size: 14px;
             opacity: 0.8;
@@ -91,6 +92,10 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
+        button{
+            -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
         .tap-icon:active .overlay:active {
     background-color: transparent !important;
     box-shadow: none !important; 
@@ -98,7 +103,35 @@
     color: inherit !important; 
         }
 
-            
+
+.music-disc {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #5e00ff 10%, black 35%, black 100%);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5), 0 3px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: spin 3s linear infinite;
+}
+
+.music-disc::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+        
 .profile-card {
     width: 90%;
     min-height: 150px; /* Fixed height */
@@ -211,6 +244,20 @@
     </div>
 
 
+<div class="music-box">
+    <div class="music-disc" id="disc"></div>
+    <div class="song-info">
+        <span class="song-title" id="songTitle">Song Name</span>
+        <span class="song-artist" id="songArtist">Artist Name</span>
+    </div>
+    <div class="music-controls">
+        <button onclick="prevTrack()"><i class="fa-solid fa-backward"></i></button>
+        <button onclick="togglePlayPause()" id="playPauseBtn"><i class="fa-solid fa-play"></i></button>
+        <button onclick="nextTrack()"><i class="fa-solid fa-forward"></i></button>
+    </div>
+</div>
+    
+
     <script>
         function enterVault() {
             // Enable Full Screen Mode
@@ -269,6 +316,43 @@ const descriptions = [
         document.addEventListener("DOMContentLoaded", () => {
             typeEffect();
         });
+
+
+
+
+let isPlaying = false; // Start in paused state
+const disc = document.getElementById('disc');
+const playPauseBtn = document.getElementById('playPauseBtn');
+
+// Set initial button to "Play" (since music is paused)
+playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+stopRotation(); // Ensure disc is not rotating initially
+
+function togglePlayPause() {
+    if (isPlaying) {
+        stopRotation();
+        playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+    } else {
+        startRotation();
+        playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+    }
+    isPlaying = !isPlaying;
+}
+
+function startRotation() {
+    disc.style.animation = "spin 3s linear infinite";
+}
+
+function stopRotation() {
+    disc.style.animation = "none";
+}
+function prevTrack() {
+    alert("Previous track clicked!");
+}
+
+function nextTrack() {
+    alert("Next track clicked!");
+}
         
     </script>
 </body>

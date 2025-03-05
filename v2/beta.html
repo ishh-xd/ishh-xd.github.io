@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ishh's Vault</title>
     <link rel="stylesheet" href="assets/style.css">
-  <script src="https://ishh.is-a.dev/effects/storm/storm.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <!--- Make sure to have a dark body tag. --->
  <script src="https://ishh.is-a.dev/effects/rain/rain.js" defer></script>
     <body>
     <!-- Tap-to-enter overlay -->
-    <div id="enter-screen" class="overlay" onclick="enterVault()">
+   <script src="https://ishh.is-a.dev/effects/storm/storm.js"></script>
+        <div id="enter-screen" class="overlay" onclick="enterVault()">
         <p class="enter-text">Click to enter Ishh's vault.</p>
         <div class="tap-to-start">
             <img src="https://ishh.is-a.dev/v2/assets/pointer_icon.png" alt="Icon" class="tap-icon"> Click to start!
@@ -172,8 +172,8 @@
 
             document.getElementById("enter-screen").style.display = "none";
            togglePlayPause()
-            Storm.start()
-            setInterval(()=> Storm.start(), 2000)
+            Storm.start().catch(console.error)
+            setInterval(()=> Storm.start(), 2000).catch(console.error)
         }
         
 

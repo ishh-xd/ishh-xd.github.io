@@ -142,21 +142,35 @@
         }
 
         .song-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px; /* Ensures text has space */
+    min-width: 150px;
+}
+.song-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333; /* Keeping original dark text */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-        .song-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-        }
+.song-artist {
+    font-size: 11px;
+    color: gray; /* Keeping artist name in gray */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-        .song-artist {
-            font-size: 11px;
-            color: gray;
-        }
+/* Adjust font size dynamically if text overflows */
+.song-info:has(.song-title:after) {
+    font-size: 12px;
+}
+
 
         .music-controls {
             display: flex;
@@ -373,7 +387,7 @@ const tracks = [
   { name: 'Die For You', artist: 'The Weeknd', src: 'https://ishh.is-a.dev/v1/music/DieForYou.mp3' },
   { name: 'Diet Mountain Dew', artist: 'Lana Del Rey', src: 'https://ishh.is-a.dev/v1/music/DietMountainDew.mp3' },
   { name: 'Lovers Rock', artist: 'TV Girl', src: 'https://ishh.is-a.dev/v1/music/LoversRock.mp3' },
-  { name: 'One Of The Girls', artist: 'The Weeknd, JENNIE, Lily-Rose Depp', src: 'https://ishh.is-a.dev/v1/music/OneOfTheGirls.mp3' },
+  { name: 'One Of The Girls', artist: 'The Weeknd, JENNIE (...)', src: 'https://ishh.is-a.dev/v1/music/OneOfTheGirls.mp3' },
   { name: 'Shootout', artist: 'Izzamuzzic & Julien Marchal', src: 'https://ishh.is-a.dev/v1/music/Shootout.mp3' },
   { name: 'Softcore', artist: 'The Neighbourhood', src: 'https://ishh.is-a.dev/v1/music/Softcore.mp3' },
   { name: 'Starboy', artist: 'The Weeknd', src: 'https://ishh.is-a.dev/v1/music/Starboy.mp3' },

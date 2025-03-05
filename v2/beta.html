@@ -366,39 +366,84 @@ const descriptions = [
         });
 
 
+const tracks = [
+  { name: 'Reflections', artist: 'The Neighbourhood', src: 'https://ishh.is-a.dev/v1/music/Reflections.mp3' },
+  { name: 'Sweater Weather', artist: 'The Neighbourhood', src: 'https://ishh.is-a.dev/v1/music/SweaterWeather.mp3' },
+  { name: 'Call Out My Name', artist: 'The Weeknd', src: 'https://ishh.is-a.dev/v1/music/CallOutMyName.mp3' },
+  { name: 'Die For You', artist: 'The Weeknd', src: 'https://ishh.is-a.dev/v1/music/DieForYou.mp3' },
+  { name: 'Diet Mountain Dew', artist: 'Lana Del Rey', src: 'https://ishh.is-a.dev/v1/music/DietMountainDew.mp3' },
+  { name: 'Lovers Rock', artist: 'TV Girl', src: 'https://ishh.is-a.dev/v1/music/LoversRock.mp3' },
+  { name: 'One Of The Girls', artist: 'The Weeknd, JENNIE, Lily-Rose Depp', src: 'https://ishh.is-a.dev/v1/music/OneOfTheGirls.mp3' },
+  { name: 'Shootout', artist: 'Izzamuzzic & Julien Marchal', src: 'https://ishh.is-a.dev/v1/music/Shootout.mp3' },
+  { name: 'Softcore', artist: 'The Neighbourhood', src: 'https://ishh.is-a.dev/v1/music/Softcore.mp3' },
+  { name: 'Starboy', artist: 'The Weeknd', src: 'https://ishh.is-a.dev/v1/music/Starboy.mp3' },
+];
 
-let isPlaying = false; // Initially paused
-        const disc = document.getElementById('disc');
-        const playPauseBtn = document.getElementById('playPauseBtn');
+let currentTrackIndex = 0;
+let isPlaying = false;
 
-        function togglePlayPause() {
-            if (isPlaying) {
-                stopRotation();
-                playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-            } else {
-                startRotation();
-                playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-            }
-            isPlaying = !isPlaying;
-        }
+const audio = new Audio(tracks[currentTrackIndex].src);
+const disc = document.getElementById('disc');
+const playPauseBtn = document.getElementById('playPauseBtn');
+const trackName = document.getElementById('songTitle');
+const trackArtist = document.getElementById('songArtist');
 
-        function startRotation() {
-            disc.style.animation = "spin 3s linear infinite";
-        }
+// Load the first song
+function loadTrack(index) {
+  audio.src = tracks[index].src;
+  trackName.textContent = tracks[index].name;
+  trackArtist.textContent = tracks[index].artist;
+}
 
-        function stopRotation() {
-            disc.style.animation = "none";
-        }
+// Play/Pause functionality
+function togglePlayPause() {
+  if (audio.paused) {
+    audio.play();
+    startRotation();
+    playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+  } else {
+    audio.pause();
+    stopRotation();
+    playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+  }
+  isPlaying = !isPlaying;
+}
 
-        function prevTrack() {
-            alert("Previous track clicked!");
-        }
+// Rotate disc animation
+function startRotation() {
+  disc.style.animation = "spin 3s linear infinite";
+}
 
-        function nextTrack() {
-            alert("Next track clicked!");
-        }
+function stopRotation() {
+  disc.style.animation = "none";
+}
 
-        
+// Previous Track
+function prevTrack() {
+  currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+  loadTrack(currentTrackIndex);
+  audio.play();
+  startRotation();
+  playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+}
+
+// Next Track
+function nextTrack() {
+  currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+  loadTrack(currentTrackIndex);
+  audio.play();
+  startRotation();
+  playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+}
+
+// Auto-play next song when the current one ends
+audio.addEventListener('ended', nextTrack);
+
+// Load the first track when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+  loadTrack(currentTrackIndex);
+});
+
     </script>
 </body>
 </html>

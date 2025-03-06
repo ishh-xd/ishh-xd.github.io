@@ -59,8 +59,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 8px;
-    padding: 10px 16px;
+    gap: 10px;
+    padding: 14px 20px;
     border-radius: 50px;
     backdrop-filter: blur(15px);
     background: rgba(200, 200, 200, 0.2); /* Light gray */

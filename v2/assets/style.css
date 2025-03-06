@@ -39,19 +39,6 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-
-.social-icons a i {
-    color: rgba(255, 255, 255, 0.7); /* Slightly gray */
-    font-size: 18px; /* Slightly larger for balance */
-    transition: transform 0.15s ease-in-out, color 0.15s;
-}
-
-
-.social-icons a:hover i {
-    color: rgba(255, 255, 255, 0.9); /* Lighter gray */
-    transform: scale(1.08); /* Very subtle scaling */
-}
-
 /* Social Bar */
 .social-icons {
     position: fixed;
@@ -59,20 +46,34 @@ body {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
-    padding: 14px 20px;
+    gap: 8px;
+    padding: 14px 20px; /* Updated box size */
     border-radius: 50px;
     backdrop-filter: blur(15px);
-    background: rgba(200, 200, 200, 0.2); /* Light gray */
+    background: rgba(220, 220, 220, 0.2); /* Light gray with subtle white */
     box-shadow: 0 4px 10px rgba(200, 200, 200, 0.3);
     animation: gradientMove 6s infinite linear;
 }
 
+/* Icon Styling */
+.social-icons a i {
+    color: rgba(255, 255, 255, 0.7); /* Slightly gray */
+    font-size: 18px; /* Updated icon size */
+    transition: transform 0.15s ease-in-out, color 0.15s;
+}
+
+/* Hover Effect */
+.social-icons a:hover i {
+    color: rgba(255, 255, 255, 0.9); /* Lighter gray */
+    transform: scale(1.08);
+}
+
 /* Smooth Looping Gradient */
 @keyframes gradientMove {
-    0%, 100% { background: rgba(200, 200, 200, 0.2); }
-    50% { background: rgba(180, 180, 180, 0.3); } /* Subtle gray animation */
+    0%, 100% { background: rgba(220, 220, 220, 0.2); }
+    50% { background: rgba(240, 240, 240, 0.3); } /* More light gray, less white */
 }
+
 
 /* Typewriter effect */
 .enter-text {

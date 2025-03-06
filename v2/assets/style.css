@@ -21,7 +21,48 @@ body {
     -moz-user-select: none; /* For Firefox */
     -ms-user-select: none; /* For older versions of Edge */
 }
+        .social-icons {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 4px;
+            padding: 4px 6px;
+            border-radius: 50px; /* Fully circular edges */
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.08); /* Better frosted effect */
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Soft glow */
+            animation: gradientMove 6s infinite linear;
+        }
 
+        /* Icon Styling */
+        .social-icons a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Icon Default */
+        .social-icons a i {
+            color: rgba(255, 255, 255, 0.7); /* Slightly gray */
+            font-size: 10px; /* Smaller icons */
+            transition: transform 0.15s ease-in-out, color 0.15s;
+        }
+
+        /* Hover Effect */
+        .social-icons a:hover i {
+            color: rgba(255, 255, 255, 0.9); /* Lighter gray */
+            transform: scale(1.05); /* Very subtle scaling */
+        }
+
+        /* Smooth Looping Gradient */
+        @keyframes gradientMove {
+            0%, 100% { background: rgba(255, 255, 255, 0.08); }
+            50% { background: rgba(255, 255, 255, 0.1); }
+        }
 /* Tap-to-enter overlay */
 .overlay {
     position: fixed;

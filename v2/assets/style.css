@@ -233,7 +233,7 @@ button:hover {
 
 /* Profile Card */
 .profile-card {
-   
+    max-width: 500px;
     background-image: url("bg.gif");
     background-size: cover; /* Adjusts the image to cover the entire screen */
     background-repeat: no-repeat; /* Prevents the image from repeating */

@@ -1,3 +1,9 @@
+document.querySelector('.close-btn').addEventListener('click', function() {
+  const alertBox = document.querySelector('.alert-box');
+  alertBox.classList.add('hide');
+  setTimeout(() => alertBox.style.display = 'none', 500);
+});
+
 const descriptions = [
     "I love programming.",
     "I like cats.",
@@ -110,6 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function enterVault() {
+   const alertBox = document.querySelector('.alert-box');
+  alertBox.classList.add('hide');
+  setTimeout(() => alertBox.style.display = 'none', 500);
+    
     let elem = document.documentElement;
     if (elem.requestFullscreen) {
         elem.requestFullscreen();

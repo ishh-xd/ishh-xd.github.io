@@ -342,6 +342,8 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 10px;
+  max-width: 400px;
+  width: fit-content;
   font-family: sans-serif;
   z-index: 10000; /* Higher than the overlay */
   transform: translateX(0);

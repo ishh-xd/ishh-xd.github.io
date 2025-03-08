@@ -117,9 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function enterVault() {
    const alertBox = document.querySelector('.alert-box');
-  alertBox?.classList?.add('hide').catch(()=>{});
-  setTimeout(() => alertBox?.style?.display = 'none', 500);
-    
+  alertBox.classList.add('hide')
+  setTimeout(() => alertBox.style.display = 'none', 500)
+
     let elem = document.documentElement;
     if (elem.requestFullscreen) {
         elem.requestFullscreen();

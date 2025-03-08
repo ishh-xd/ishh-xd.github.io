@@ -352,7 +352,7 @@ button:hover {
 }
 
 .alert-icon {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .alert-text {
@@ -362,8 +362,9 @@ button:hover {
 .close-btn {
   background: none;
   border: none;
-  color: white;
-  font-size: 18px;
+  shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: black;
+  font-size: 24px;
   cursor: pointer;
 }
 

@@ -42,7 +42,7 @@ body {
 /* Social Icons Bar */
 .social-icons {
     position: fixed;
-    bottom: 12px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -53,6 +53,8 @@ body {
     background: rgba(200, 200, 200, 0.1); /* More transparent */
     box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05); /* Softer glow */
     animation: gradientMove 6s infinite linear;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* Icons */

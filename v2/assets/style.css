@@ -363,18 +363,18 @@ button:hover {
   background: none;
   border: none;
   shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  color: gray;
+  color: black;
   font-size: 24px;
   cursor: pointer;
 }
 
 .close-btn:hover {
-  color: black;
+  color: gray;
 }
 
 /* Smooth sliding effect when closing */
 .alert-box.hide {
-  transform: translateY(120%);
+  transform: translateX(-120%); /*left*/
   opacity: 0;
   pointer-events: none;
 }

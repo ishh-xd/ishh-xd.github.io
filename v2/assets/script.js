@@ -1,7 +1,7 @@
 document.querySelector('.close-btn').addEventListener('click', function() {
   const alertBox = document.querySelector('.alert-box');
-  alertBox.classList.add('hide')
-  setTimeout(() => alertBox.style.display = 'none', 500)
+  alertBox.classList.add('hide');
+  setTimeout(() => alertBox.style.display = 'none', 500);
 });
 
 const descriptions = [
@@ -117,9 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function enterVault() {
    const alertBox = document.querySelector('.alert-box');
-  alertBox.classList.add('hide')
-  setTimeout(() => alertBox.style.display = 'none', 500)
-
+  alertBox.classList.add('hide');
+  setTimeout(() => alertBox.style.display = 'none', 1000);
+  
     let elem = document.documentElement;
     if (elem.requestFullscreen) {
         elem.requestFullscreen();

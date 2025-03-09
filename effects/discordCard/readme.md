@@ -1,3 +1,8 @@
+### Discord Profile Card
+(Fully customisable)
+
+**Live Preview**: https://ishh.is-a.dev/effects/discordcard/example
+
 ```xml
 <div id="profile-container"></div>
 

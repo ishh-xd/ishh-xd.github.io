@@ -1,5 +1,12 @@
-### Discord Profile Card
-(Fully customisable)
+# Discord Profile Card
+### Fully Customisable
+
+## ⚠️ Important 
+This function uses **lanyard.rest** api for *fetching discord user*. For this function to work you must join the [Lanyard discord server](https://discord.gg/lanyard). 
+
+`(If the invite link doesn't work, find it online.)`
+
+<br>
 
 **Live Preview**: https://ishh.is-a.dev/effects/discord-card/example
 

@@ -1,0 +1,20 @@
+```xml
+<div id="profile-container"></div>
+
+<script src="https://ishh.is-a.dev/effects/discordCard/card.js" defer></script>
+<script>
+   window.addEventListener('load', () => {
+     createDiscordCard({
+        userId: '1041881720380727377',
+        containerId: 'profile-container',
+        width: '90%',
+        height: '50px',
+        borderRadius: '20px',
+        background: 'rgba(0, 0, 0, 0.1)',
+        textColor: 'black',
+        badgeSize: '24px',
+        hoverBackground: 'rgba(0, 0, 0, 0.3)' // Your preferred hover color
+    });
+   });
+</script>
+```

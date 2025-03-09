@@ -1,10 +1,12 @@
 # Discord Profile Card
-### Fully Customisable
+### Features 
+- Updates automatically.
+- Fetches latest data every 15 seconds.
+- Partially customisable.
+- Shows active status.
 
 ## ⚠️ Important 
-This function uses **lanyard.rest** api for *fetching discord user*. For this function to work you must join the [Lanyard discord server](https://discord.gg/lanyard). 
-
-`(If the invite link doesn't work, find it online.)`
+This function uses **lanyard.rest** api for *fetching discord user*. For this function to work you must join the official [Lanyard](https://discord.gg/lanyard) discord server. 
 
 <br>
 

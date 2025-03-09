@@ -1,12 +1,12 @@
 ### Discord Profile Card
 (Fully customisable)
 
-**Live Preview**: https://ishh.is-a.dev/effects/discordcard/example
+**Live Preview**: https://ishh.is-a.dev/effects/discord-card/example
 
 ```xml
 <div id="card"></div> 
 
-<script src="https://ishh.is-a.dev/effects/discordCard/card.js" defer></script>
+<script src="https://ishh.is-a.dev/effects/discord-card/card.js" defer></script>
 <script>
    window.addEventListener('load', () => {
      createDiscordCard({

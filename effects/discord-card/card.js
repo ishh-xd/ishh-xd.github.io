@@ -117,9 +117,9 @@ function createDiscordCard({
                     2: 'https://cdn.discordapp.com/emojis/1348298094810234920.png', // Partner
                     4: 'https://cdn.discordapp.com/emojis/1348298617622106194.gif', // HypeSquad Events
                     8: 'https://cdn.discordapp.com/emojis/1348298901874278435.png', // Bug Hunter 1
-                    64: 'https://cdn.discordapp.com/emojis/1348298304999657543.png', // HypeSquad Bravery
-                    128: 'https://cdn.discordapp.com/emojis/1348298294941716683.png', // HypeSquad Brilliance
-                    256: 'https://cdn.discordapp.com/emojis/1348298245842927717.png', // HypeSquad Balance
+                    64: 'https://cdn.discordapp.com/emojis/1348310282770055209.png', // HypeSquad Bravery
+                    128: 'https://cdn.discordapp.com/emojis/1348310338457571369.png', // HypeSquad Brilliance
+                    256: 'https://cdn.discordapp.com/emojis/1348310441012756541.png', // HypeSquad Balance
                     512: 'https://cdn.discordapp.com/emojis/1348298794441113702.png', // Early Supporter
                     16384: 'https://cdn.discordapp.com/emojis/1348298901874278435.png', // Bug Hunter 2
                     131072: 'https://cdn.discordapp.com/emojis/1348298985428750417.png', // Verified Developer

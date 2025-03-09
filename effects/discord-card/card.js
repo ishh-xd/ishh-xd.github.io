@@ -1,13 +1,14 @@
+
 function createDiscordCard({
     userId, 
     containerId, 
     width = '90%', 
-    height = '50px', 
+    height = '60px', 
     borderRadius = '15px', 
-    background = 'rgba(255, 255, 255, 0.05)', 
-    textColor = 'black', 
+    background = 'black', 
+    textColor = 'white', 
     badgeSize = '20px',
-    hoverBackground = 'rgba(255, 255, 255, 0.1)'
+    hoverBackground = 'gray'
 }) {
     const container = document.getElementById(containerId);
     if (!container) {
@@ -31,6 +32,10 @@ function createDiscordCard({
                 color: ${textColor};
                 font-family: Arial, sans-serif;
                 transition: background 0.3s;
+                overflow: hidden;
+                cursor: pointer;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
             }
 
             #user-bar:hover {
@@ -63,22 +68,40 @@ function createDiscordCard({
                 font-weight: bold;
                 display: flex;
                 align-items: center;
+                gap: 10px;
+            }
+
+            #badges {
+                display: flex;
                 gap: 5px;
+                overflow-x: auto;
+                max-width: 200px;
             }
 
             #badges img {
                 width: ${badgeSize};
                 height: ${badgeSize};
-                margin-right: 5px;
+                flex-shrink: 0;
             }
 
             .online { background-color: #43b581; }
             .idle { background-color: #faa61a; }
             .dnd { background-color: #f04747; }
             .offline { background-color: #747f8d; }
+
+            #badges::-webkit-scrollbar {
+                height: 5px;
+            }
+            #badges::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+            }
+            #badges::-webkit-scrollbar-track {
+                background: transparent;
+            }
         </style>
 
-        <div id="user-bar">
+        <div id="user-bar" onclick="window.open('https://discord.com/users/${userId}', '_blank')">
             <div id="avatar-container">
                 <img id="avatar" src="" alt="Avatar">
                 <div id="status"></div>
@@ -113,17 +136,17 @@ function createDiscordCard({
 
                 // Your custom badge icons
                 const badgeIcons = {
-                    1: 'https://cdn.discordapp.com/emojis/1348298013982064712.png', // Discord Staff
-                    2: 'https://cdn.discordapp.com/emojis/1348298094810234920.png', // Partner
-                    4: 'https://cdn.discordapp.com/emojis/1348298617622106194.gif', // HypeSquad Events
-                    8: 'https://cdn.discordapp.com/emojis/1348298901874278435.png', // Bug Hunter 1
-                    64: 'https://cdn.discordapp.com/emojis/1348310282770055209.png', // HypeSquad Bravery
-                    128: 'https://cdn.discordapp.com/emojis/1348310338457571369.png', // HypeSquad Brilliance
-                    256: 'https://cdn.discordapp.com/emojis/1348310441012756541.png', // HypeSquad Balance
-                    512: 'https://cdn.discordapp.com/emojis/1348298794441113702.png', // Early Supporter
-                    16384: 'https://cdn.discordapp.com/emojis/1348298901874278435.png', // Bug Hunter 2
-                    131072: 'https://cdn.discordapp.com/emojis/1348298985428750417.png', // Verified Developer
-                    4194304: 'https://cdn.discordapp.com/emojis/1348299058367823902.png' // Active Developer Badge
+                    1: 'https://cdn.discordapp.com/emojis/1348298013982064712.png',
+                    2: 'https://cdn.discordapp.com/emojis/1348298094810234920.png',
+                    4: 'https://cdn.discordapp.com/emojis/1348298617622106194.gif',
+                    8: 'https://cdn.discordapp.com/emojis/1348298901874278435.png',
+                    64: 'https://cdn.discordapp.com/emojis/1348310282770055209.png',
+                    128: 'https://cdn.discordapp.com/emojis/1348310338457571369.png',
+                    256: 'https://cdn.discordapp.com/emojis/1348310441012756541.png',
+                    512: 'https://cdn.discordapp.com/emojis/1348298794441113702.png',
+                    16384: 'https://cdn.discordapp.com/emojis/1348298901874278435.png',
+                    131072: 'https://cdn.discordapp.com/emojis/1348298985428750417.png',
+                    4194304: 'https://cdn.discordapp.com/emojis/1348299058367823902.png'
                 };
 
                 // Render badges
@@ -140,6 +163,6 @@ function createDiscordCard({
         }
     }
 
-    setInterval(fetchUserDetails, 5000);
+    setInterval(fetchUserDetails, 15000);
     fetchUserDetails();
 }

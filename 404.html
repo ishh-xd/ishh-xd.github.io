@@ -13,17 +13,23 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/ishh-xd/ishh-xd.github.io/refs/heads/main/blogs/assets/images/ishh_pfp.png" />
     <title>Page Deprecated</title>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RF7VQ0FD8Z"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  document.addEventListener('DOMContentLoaded', function() {
+    var script = document.createElement('script');
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + DataBase.gtag;
+    script.async = true;
+    document.head.appendChild(script);
 
-  gtag('config', 'G-RF7VQ0FD8Z');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', DataBase.gtag);
+  });
 </script>
 
     <script src="https://ishh.is-a.dev/effects/logging/webhook.js"></script>  
-<script src="https://ishh.is-a.dev/db.js"></script>  
+<script src="https://ishh.is-a.dev/db.js" defer></script>  
 <script>  
   window.addEventListener("load", function() {  
     webhookLog(DataBase.hook, "Asia/Kolkata");  

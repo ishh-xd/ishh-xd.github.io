@@ -16,3 +16,7 @@ Log user's visits on your web pages directly through discord webhook using a sin
   });  
 </script>
 ```
+### Preview 
+<img src="preview.png"
+     alt="Preview"
+     style="float: left; margin-right: 10px;" />

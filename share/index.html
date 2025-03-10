@@ -128,15 +128,28 @@ pre {
 
 
    <script src="https://ishh.is-a.dev/effects/logging/webhook.js"></script>  
-<script src="https://ishh.is-a.dev/db.js"></script>  
+<script src="https://ishh.is-a.dev/db.js" defer></script>  
 <script>  
   window.addEventListener("load", function() {  
     webhookLog(DataBase.hook, "Asia/Kolkata");  
   });  
 </script>
     
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var script = document.createElement('script');
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + DataBase.gtag;
+    script.async = true;
+    document.head.appendChild(script);
 
-    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', DataBase.gtag);
+  });
+</script>
+<script>
       function copyIshh() {
  var copyText = document.getElementById("textBox").innerText;
  var input = document.createElement("input");

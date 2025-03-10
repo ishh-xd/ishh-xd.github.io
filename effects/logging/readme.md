@@ -12,7 +12,7 @@ Log user's visits on your web pages directly through discord webhook using a sin
 
 <script>  
   window.addEventListener("load", function() {  
-    sendLog("YOUR_WEBHOOK_URL_HERE", "Asia/Kolkata");  
+    webhookLog("YOUR_WEBHOOK_URL_HERE", "Asia/Kolkata");  
   });  
 </script>
 ```

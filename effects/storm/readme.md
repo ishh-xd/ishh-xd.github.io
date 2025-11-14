@@ -12,4 +12,4 @@ window.onload = () => {
 </script>
 ```
 
-`Designed by Ishh along with Artificial Intelligence.`
+`Designed by Ishh.`

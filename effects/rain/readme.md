@@ -7,4 +7,4 @@
  <script src="https://ishh.is-a.dev/effects/rain/rain.js" defer></script>
 ```
 
-`Designed by Ishh along with Artificial Intelligence.`
+`Designed by Ishh.`

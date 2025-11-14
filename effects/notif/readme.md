@@ -13,4 +13,4 @@ icon="https://ishh.is-a.dev/effects/notif/eg_icon.png"
     It's going to rain today. Don't forget your umbrella!
 </custom-notif>
 ```
-`Designed by Ishh along with Artificial Intelligence.`
+`Designed by Ishh.`

@@ -3,7 +3,7 @@
 
 **Live Preview**: https://ishh.is-a.dev/effects/snow/example
 ```html
-<!--- Make sure to have a dark body tag. --->
+<!--- Make sure to have a dark background. --->
  <!-- Compulsory:
 Must be in body tag. -->
 <body>
@@ -13,4 +13,4 @@ Must be in body tag. -->
 </body>
 ```
 
-`Designed by Ishh along with Artificial Intelligence.`
+`Designed by Ishh.`

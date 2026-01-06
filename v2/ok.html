@@ -1,92 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ishh</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
-    /* Basic reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  user-select: none;
-  -webkit-user-select: none; /* For Safari */  
-  -moz-user-select: none; /* For Firefox */
-  -ms-user-select: none;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-body {
-  background: #0a0a0a;
-  color: #eee;
-  font-family: Arial, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
+    body {
+      background: #0a0a0a;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-.container {
-  text-align: center;
-  padding: 20px;
-  max-width: 480px;
-  width: 90%;
-}
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.title {
-  font-size: 3rem;
-  margin-bottom: 16px;
-  font-weight: bold;
-}
+    .container {
+      text-align: center;
+      padding: 20px;
+      max-width: 480px;
+      width: 90%;
+    }
 
-.description {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 28px;
-  color: #ccc;
-}
+    .title {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      font-weight: bold;
+    }
 
-a {
-    color:#fff;
-    text-decoration:none;
-    margin:0 10px;
-    font-size:0.6em;
-    display:flex;
-    align-items:center;
-    gap:3px;
-    border-bottom:2px solid transparent;
-  }
-  a:hover {
-    border-bottom:2px solid #fff;
-  }
+    .description {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      color: #ccc;
+    }
 
-.version {
-  margin-top: 22px;
-  font-size: 0.9rem;
-  color: #666;
-}
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    a:hover {
+      border-bottom: 2px solid #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
   </style>
 </head>
 <body>
-  <main class="container">
-    <h1 class="title">Ishh 💸</h1>
 
-    <p class="description">
-      1. Just a human from <strong>India</strong><br>
-      2. I like hardware, especially stuff like servers... I also may hoard some domains :)
-    </p>
+  <main>
+    <div class="container">
+      <h1 class="title">Ishh 💸</h1>
 
-    <a ref="#"><i class="fab fa-discord"></i>Discord</a>
-<a href="#"><i class="fab fa-github"></i>GitHub</a>
-<a href="#"><i class="fas fa-snapchat"></i>Snapchat</a>
-    <br>
+      <p class="description">
+        1. Just a human from <strong>India</strong><br>
+        2. I like hardware, especially stuff like servers...  
+        I also may hoard some domains :)
+      </p>
 
-    <footer class="version">v0.0.8</footer>
+      <div class="links">
+        <a href="#"><i class="fab fa-discord"></i>Discord</a>
+        <a href="#"><i class="fab fa-github"></i>GitHub</a>
+        <a href="#"><i class="fab fa-snapchat"></i>Snapchat</a>
+      </div>
+    </div>
   </main>
+
+  <footer>
+    v0.0.8
+  </footer>
 
 </body>
 </html>
